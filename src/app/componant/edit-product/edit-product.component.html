@@ -1,0 +1,43 @@
+<div class="row h-100 w-100" [ngClass]="{ 'dMode': isDarkMode(), 'lMode': !isDarkMode() }">
+  <div *ngIf="product">
+    <h2>Edit Product: {{ product[0].title }}</h2>
+
+    <div class="d-flex justify-content-center">
+      <form (ngSubmit)="updateProduct()">
+        <div class="row justify-content-between">
+          <div class="col-4 m-2">
+            <label for="title" class="fs-5   fw-bold m-1">Title:</label>
+            <input class="btn border-secondary " id="title " [(ngModel)]="product[0].title" name="title" />
+
+          </div>
+          <div class="col-4 Dm-2">
+            <label for="price" class="fs-5 fw-bold m-1">Price:</label>
+            <input class="btn border-secondary" id="price" [(ngModel)]="product[0].price" name="price" type="number" />
+
+          </div>
+        </div>
+        <div class="row justify-content-between">
+          <div class="col-4 m-2"> <label for="description" class="fs-5 fw-bold m-1">Description:</label>
+            <textarea class="btn border-secondary" id="description" [(ngModel)]="product[0].description"
+              name="description"></textarea>
+
+          </div>
+          <div class="col-4 m-2">
+            <label for="category" class="fs-5 fw-bold m-1">Category:</label>
+            <input class="btn border-secondary" id="category" [(ngModel)]="product[0].category.name" name="category" />
+
+          </div>
+        </div>
+        <div *ngFor="let image of product[0].images; let i = index">
+          <div class="image-thumbnail">
+            <img [src]="image" alt="Product Image" class="rounded m-1" style="width: 100px; height: 100px;" />
+            <label for="image-{{ i }}" class="fs-5 fw-bold m-1">Image {{ i + 1 }} URL:</label>
+            <input id="image-{{ i }}" [(ngModel)]="product[0].images[i]" name="images-{{ i }}" />
+          </div>
+        </div>
+
+        <button type="submit" class="btn-move p-3 rounded ">Update Product</button>
+      </form>
+    </div>
+  </div>
+</div>

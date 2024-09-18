@@ -1,0 +1,77 @@
+<div class="p-5 " [ngClass]="{ 'dMode': isDarkMode(), 'lMode': !isDarkMode() }">
+    <div class="row d-felx  p-3    ">
+
+
+        <div class="container    col-10   ">
+            <div class="row d-flex flex-lg-row flex-column-reverse">
+                <div class="row d-flex">
+                    <ng-container *ngFor="let item of product;   let i = index">
+                        <div class="coll-lg-4 col-md-6 col-12 p-4   rounded    "
+                            [ngClass]="{ 'dMode': isDarkMode(), 'lMode': !isDarkMode() }">
+                            <a [routerLink]="['/productById',item.id]">
+                                <img class="img-fluid rounded  mb-3  " [src]="item.images" alt="" />
+                            </a>
+                            <div>
+                                <p>{{ truncatedText(item.description) }}
+                                    <a [routerLink]="['/productById',item.id]" class="btn">
+                                        <strong>Read more</strong>
+                                    </a>
+                                </p>
+                            </div>
+
+                            <div>
+                                <p class="fw-bold text-xl mb-2">{{item.title}}</p>
+                                <p class="text-muted text-sm">
+                                </p>
+                                <div class="d-flex justify-content-start"><span
+                                        [ngClass]="{ 'dMode': isDarkMode(), 'lMode': !isDarkMode() }"
+                                        class="    m-1 btn rounded-5 border-1 border-secondary   fs-5 px-3 py-2 fs-6 ">
+                                        {{item.category.name}}
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <p class="text-muted">Price</p>
+                                    <p class="fw-bold "> $ {{item.price}} </p>
+                                </div>
+                                <button (click)="addToCar(i)" class=" btn-move btn me-5 px-3 fs-5 py-1  " btn-move
+                                    role="button">add
+                                    To
+                                    Cart</button>
+                            </div>
+                        </div>
+                    </ng-container>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="col-2 border border-secondary my-3 p-2 rounded-3" style="height:50vh;"
+            [ngClass]="{ 'dMode': isDarkMode(), 'lMode': !isDarkMode() }">
+            <!-- sidebar router -->
+            <div class="card border-0  shadow-sm " [ngClass]="{ 'dMode': isDarkMode(), 'lMode': !isDarkMode() }">
+                <h4>Categories:</h4>
+                <button class=" shadow-sm  p-2 rounded-3 m-1"
+                    [ngClass]="{ 'dMode': isDarkMode(), 'lMode': !isDarkMode() }" (click)="navigateToCategory(0)"
+                    routerLinkActive="active">All</button>
+                <button class=" shadow-sm  p-2 rounded-3 m-1"
+                    [ngClass]="{ 'dMode': isDarkMode(), 'lMode': !isDarkMode() }" (click)="navigateToCategory(1)"
+                    routerLinkActive="active">Clothes</button>
+                <button class=" shadow-sm  p-2 rounded-3 m-1"
+                    [ngClass]="{ 'dMode': isDarkMode(), 'lMode': !isDarkMode() }" (click)="navigateToCategory(2)"
+                    routerLinkActive="active">Electronics</button>
+                <button class=" shadow-sm  p-2 rounded-3 m-1"
+                    [ngClass]="{ 'dMode': isDarkMode(), 'lMode': !isDarkMode() }" (click)="navigateToCategory(3)"
+                    routerLinkActive="active">Furniture</button>
+                <button class=" shadow-sm  p-2 rounded-3 m-1"
+                    [ngClass]="{ 'dMode': isDarkMode(), 'lMode': !isDarkMode() }" (click)="navigateToCategory(4)"
+                    routerLinkActive="active">Shoes</button>
+                <button class=" shadow-sm  p-2 rounded-3 m-1"
+                    [ngClass]="{ 'dMode': isDarkMode(), 'lMode': !isDarkMode() }" (click)="navigateToCategory(5)"
+                    routerLinkActive="active">Miscellaneous</button>
+            </div>
+        </div>
+
+    </div>
+</div>

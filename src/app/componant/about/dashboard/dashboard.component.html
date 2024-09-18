@@ -1,0 +1,36 @@
+<div class="p-5  d-felx flex-column justify-content-center "
+    [ngClass]="{ 'dMode': isDarkMode(), 'lMode': !isDarkMode() }">
+    <div>
+        <h1>hllow User... !</h1>
+        <h2>this is your dsahboard </h2>
+
+    </div>
+    <table class="border border-2 p-5  rounded-3   w-100 ">
+        <thead class="border w-100   bg-secondary ">
+            <th class="px-3 py-2">id</th>
+            <th>Title</th>
+            <th>price</th>
+            <th>images</th>
+            <th>category</th>
+            <th>Actions</th>
+        </thead>
+        <tbody>
+            @for (item of product; track $index) {
+            <tr ngClass="">
+                <th class="px-3 py-2">{{item.id}}</th>
+                <th>{{item.title}}</th>
+                <th>{{item.price}}</th>
+                <th>
+                    <ng-container *ngFor="let image of item.images;   let i = index">
+                        <img class="img-fluid rounded  m-2" [src]="image" alt="" style="height: 50px;" />
+                    </ng-container>
+                </th>
+                <th>{{item.category.name}}</th>
+                <th><a class="btn  rounded-5  px-3 py-1 bg-secondary " [routerLink]="['/editById/'+item.id]"
+                        routerLinkActive="router-link-active">Editer</a></th>
+            </tr>
+            }
+        </tbody>
+    </table>
+
+</div>

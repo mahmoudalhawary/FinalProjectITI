@@ -1,0 +1,52 @@
+<div class="body w-100 d-flex justify-content-center align-items-center vh-100 "
+    [ngClass]="{ 'dMode': isDarkMode(), 'lMode': !isDarkMode() }">
+    <div class="container w-75 m-4  ">
+        <p class="title">About Developer</p>
+        <p>
+            Hello there! I'm <span>Team ITI</span>, the passionate developer behind
+            this website. With a keen eye for detail and a love for crafting
+            seamless digital experiences, I set out to create a unique and
+            user-friendly online shopping platform.
+        </p>
+        <p class="title">Frameworks and Technologies Used</p>
+        <p>
+            In the development of this website, I've harnessed the power of the
+            following frameworks and technologies to create a modern, single-page
+            application (SPA):
+        </p>
+        <div class="icon">
+            <p><fa-icon [icon]="faReact" class="fs-3"></fa-icon></p>
+            <p><fa-icon [icon]="faGitlab" class="fs-3"></fa-icon></p>
+            <p><fa-icon [icon]="faVuejs" class="fs-3"></fa-icon></p>
+
+        </div>
+        <p class="title">A Glimpse into the Backend</p>
+        <p>
+            While my expertise primarily lies in frontend development, I've
+            integrated Node.js and Express.js on the backend to ensure a robust and
+            efficient server-side infrastructure. This combination allows for smooth
+            communication between the frontend and the server, ensuring a seamless
+            user experience.
+        </p>
+        <div class="icon">
+
+
+            <!-- app.component.html -->
+            <p><fa-icon [icon]="faNode" class="fs-3"></fa-icon></p>
+            <p><fa-icon [icon]="faAngular" class="fs-3"></fa-icon></p>
+
+        </div>
+        <p class="title">Let's Connect</p>
+        <p>
+            Explore the website, discover the offerings, and if you have any
+            questions or suggestions, I'm here to listen. Your journey through this
+            online shopping experience is as important to me as it is to you. Happy
+            exploring!
+        </p>
+        <div class="icon">
+            <p><fa-icon [icon]="faLinkedin" class="fs-3"></fa-icon></p>
+            <p><fa-icon [icon]="faGithub" class="fs-3"></fa-icon></p>
+
+        </div>
+    </div>
+</div >

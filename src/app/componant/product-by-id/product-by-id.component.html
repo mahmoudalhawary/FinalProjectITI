@@ -1,0 +1,66 @@
+<div class="d-flex row justify-content-center align-items-center " style="width: 100vw;height: 100vh"
+    [ngClass]="{ 'dMode': isDarkMode(), 'lMode': !isDarkMode() }">
+    <div class="row  col-9 flex-lg-row border  border-2 flex-column-reverse  m-5 rounded p-3"
+        [ngClass]="{ 'dMode2': isDarkMode(), 'lMode2': !isDarkMode() }">
+
+        <div class="row d-flex justify-content-center align-items-center p-4">
+            <div class="col-2  justify-content-between flex px-5">
+                @for (i of product[0].images; track $index) {
+                @if ($index==imageIndex) {
+
+                <img class="img-fluid  rounded w-75 m-3" style="opacity: 100%;" [src]="i"
+                    (click)="ChangeIamgeIndex($index)" />
+                }
+                @else {
+
+                <img class="img-fluid  rounded w-75 m-3" style="opacity: 40%;" [src]="i"
+                    (click)="ChangeIamgeIndex($index)" />
+                }
+
+                }
+
+
+
+            </div>
+            <div class="col-md-4">
+                <img class="img-fluid rounded col-lg-4 w-100 mb-3" [src]="product[0].images[imageIndex]" alt="" />
+            </div>
+
+
+
+            <div class="  col-md-6 col-12    ">
+
+                <div class="row justify-content-end ">
+                    <button routerLink="/products" class="btn rounded-5 border-1 border-secondary col-2 fs-5 "
+                        [ngClass]="{ 'dMode': isDarkMode(), 'lMode': !isDarkMode() }">
+
+                        back</button>
+
+                </div>
+                <h1> {{product[0].title}}</h1>
+                <span class="badge  border border-secondary rounded-5 p-2"
+                    [ngClass]="{ 'dMode': isDarkMode(), 'lMode': !isDarkMode() }">
+                    {{product[0].category.name}}
+                </span>
+                <div>
+                    <br>
+                    <h5 class="text-secondary">{{product[0].description}}</h5>
+
+                </div><br><br>
+                <div class=" d-flex justify-content-between align-items-center">
+                    <div>
+                        <h4 class="fw-bold ">
+                            <span>Price</span><br>
+                            $ {{product[0].price}}
+                        </h4>
+                    </div>
+                    <button (click)="addToCar()" class=" btn-move btn me-5 px-3 fs-5 py-1  " btn-move role="button">add
+                        To
+                        Cart</button>
+
+                    <!-- <AddToCart [cartData]="{id: item.id, title: item.title, price: item.price}" /> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
