@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { product } from '../../../models/product/product.module';
-import { ProductService } from '../../../services/product.service';
+import { product } from '../../models/product/product.module';
+import { ProductService } from '../../services/product.service';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
-import { ThemeService } from '../../../services/mode.service';
+import { ThemeService } from '../../services/mode.service';
 import { CommonModule } from '@angular/common';
 
 @Component({

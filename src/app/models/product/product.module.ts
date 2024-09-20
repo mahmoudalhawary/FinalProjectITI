@@ -18,6 +18,9 @@ export interface Category {
  
 }
  
+export interface Category2 {
+  name: Name;
+}
 
 export enum Name {
   Electronics = "Electronics",
@@ -31,4 +34,5 @@ export enum Name {
   Shoes = "Shoes",
   TestingCategory = "Testing category ",
   Women = "Women",
+
 }

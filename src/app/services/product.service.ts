@@ -11,7 +11,6 @@ export class ProductService {
   // private apiUrl = "/api/products"
   private apiUrl = 'http://localhost:3000/products';
 
-  // private apiUrl = 'https://react-shop-backend.liara.run/products';
   constructor(private httpClient: HttpClient) { }
   getAllProducts(): Observable<product[]> {
 
@@ -27,7 +26,7 @@ export class ProductService {
     return this.httpClient.put(`${this.apiUrl}/${id}`, updatedProduct);
   }
 
-  private cartUrl = 'http://localhost:3000/ShopCar';  // URL to your JSON server for the cart
+  private cartUrl = 'http://localhost:3000/ShopCar';  
 
 
   addToCart(item: product): Observable<product> {

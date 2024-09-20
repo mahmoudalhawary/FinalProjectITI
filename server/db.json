@@ -37,22 +37,6 @@
         "id": 1,
         "name": "Clothes"
       },
-      "_id": "659e8a485f3b1887ef3212dd",
-      "id": "5",
-      "title": "Intelligent Wooden Pizza",
-      "price": 622,
-      "description": "Andy shoes are designed to keeping in mind durability as well as trends, the most stylish range of shoes & sandals",
-      "images": [
-        "https://iili.io/dR1ki0X.jpg",
-        "https://iili.io/dR1ksgn.jpg",
-        "https://iili.io/dR1ktef.jpg"
-      ]
-    },
-    {
-      "category": {
-        "id": 1,
-        "name": "Clothes"
-      },
       "_id": "659e8a485f3b1887ef3212de",
       "id": "6",
       "title": "Handcrafted Rubber Shirt",

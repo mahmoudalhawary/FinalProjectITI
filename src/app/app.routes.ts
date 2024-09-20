@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
 import { ProductsComponent } from './componant/products/products.component';
 import { ProductByIdComponent } from './componant/product-by-id/product-by-id.component';
-import { DashboardComponent } from './componant/about/dashboard/dashboard.component';
+import { DashboardComponent } from './componant/dashboard/dashboard.component';
 import { EditProductComponent } from './componant/edit-product/edit-product.component';
 import { HomeComponent } from './componant/home/home.component';
 import { AboutComponent } from './componant/about/about.component';
