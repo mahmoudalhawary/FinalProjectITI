@@ -6,6 +6,25 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    overflow-x: unset;
+}
+
+::-webkit-scrollbar {
+    width: 15px;
+}
+
+::-webkit-scrollbar-track {
+    background: black;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #703bf7;
+}
+
+/* تخصيص لون شريط التمرير في المتصفحات التي تدعمها */
+html {
+    scrollbar-color: #703bf7;
+    scrollbar-width: auto;
 }
 
 .lMode {
@@ -31,8 +50,9 @@
         color: #24272bce;
     }
 }
+
 .lMode3 {
-    background-color:#d1d1d1;
+    background-color: #d1d1d1;
     color: #24272bce;
     border-color: #d1d1d1;
 
@@ -64,7 +84,11 @@
     color: #ffffff;
     font-size: xx-large;
 }
+.move{
+    color: #703bf7;
+    font-size: 23px;
 
+font-weight: 500;}
 .ptnDMode {
     color: #25a5e9;
     background-color: #1a1a1a;
@@ -92,12 +116,20 @@
     color: red;
 }
 
-.coll-lg-4 {
-    margin: 5px;
+.col-xl-4 {
+    /* margin: 5px; */
+    /* padding: 10px; */
+    /* border: 1px solid #444444; */
+    /* border-radius: 5px; */
+    /* width: 32%; */
+}
+
+.prodBorder {
+    /* margin: 5px; */
     padding: 10px;
     border: 1px solid #444444;
     border-radius: 5px;
-    width: 32%;
+    /* width: 32%; */
 }
 
 html,
@@ -115,3 +147,8 @@ body {
     box-shadow: 0 4px 8px 0 rgba(115, 115, 115, 0.2), 0 6px 20px 0 rgba(129, 129, 129, 0.19);
 
 }
+
+.active-class {
+    background-color: #007bff;
+     color: white;
+ }

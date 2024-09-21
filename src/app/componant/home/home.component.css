@@ -6,6 +6,11 @@
     padding: 0;
 }
 
+.over {
+
+    overflow-x: hidden;
+}
+
 @font-face {
     font-family: Mooo;
     /* src: url(./Font/Moo.ttf); */
@@ -112,7 +117,7 @@ body {
 .section-2 {
     background-color: rgb(26 26 26);
     height: 100vh;
-    width: 100vw;
+    width: 98.5vw;
 
 }
 
@@ -214,8 +219,8 @@ body {
 
 .category {
     background-color: rgb(26 26 26);
-    height: 50vh;
-    width: 100vw;
+    /* height: 50vh; */
+    width: 98.5vw;
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
@@ -270,7 +275,7 @@ body {
 }
 
 .section-4 {
-    height: 900px;
+    /* height: 900px; */
 }
 
 .section-4 .intity-2 {

@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { product } from '../models/product/product.module';
 import { Observable } from 'rxjs';
+import { product } from '../models/product/product.module';
 
 @Injectable({
   providedIn: 'root'
@@ -27,7 +27,12 @@ export class ProductService {
     return this.httpClient.put(`${this.apiUrl}/${id}`, updatedProduct);
   }
 
-  private cartUrl = 'http://localhost:3000/ShopCar';  // URL to your JSON server for the cart
+  addProduct(product: product): Observable<product> {
+    return this.httpClient.post<product>(this.apiUrl, product);
+  }
+
+
+  private cartUrl = 'http://localhost:3000/ShopCar';  
 
 
   addToCart(item: product): Observable<product> {

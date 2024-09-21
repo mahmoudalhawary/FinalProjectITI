@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
-import { product } from '../../models/product/product.module';
-import { ProductService } from '../../services/product.service';
+ import { ProductService } from '../../services/product.service';
 import { ActivatedRoute, RouterLink, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { ThemeService } from '../../services/mode.service';
+import { product } from '../../models/product/product.module';
 @Component({
   selector: 'app-product-by-id',
   standalone: true,
-  imports: [RouterModule, CommonModule, RouterLink ],
+  imports: [RouterModule, CommonModule, RouterLink],
   templateUrl: './product-by-id.component.html',
   styleUrl: './product-by-id.component.css'
 })

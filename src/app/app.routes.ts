@@ -1,10 +1,11 @@
 import { Routes } from '@angular/router';
 import { ProductsComponent } from './componant/products/products.component';
 import { ProductByIdComponent } from './componant/product-by-id/product-by-id.component';
-import { DashboardComponent } from './componant/about/dashboard/dashboard.component';
+import { DashboardComponent } from './componant/dashboard/dashboard.component';
 import { EditProductComponent } from './componant/edit-product/edit-product.component';
 import { HomeComponent } from './componant/home/home.component';
 import { AboutComponent } from './componant/about/about.component';
+import { AddProductComponent } from './componant/add-product/add-product.component';
 
 export const routes: Routes = [
     { path: '', redirectTo: '/products', pathMatch: 'full' },
@@ -13,7 +14,9 @@ export const routes: Routes = [
     { path: 'dashboard', component: DashboardComponent, title: 'dashboard' },
     { path: 'home', component: HomeComponent, title: 'home' },
     { path: 'about', component: AboutComponent, title: 'about' },
-    { path: 'editById/:id', component: EditProductComponent, title: 'productById' },
+    { path: 'addProduct', component: AddProductComponent, title: 'add product' },
+    { path: 'editById', component: EditProductComponent, title: 'edit product' },
+    { path: 'editById/:id', component: EditProductComponent, title: 'edit product' },
     { path: 'productById/:id', component: ProductByIdComponent, title: 'Product Details' },
     { path: '**', component: ProductByIdComponent, title: 'Not Found' },
 ];

@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { product } from '../../models/product/product.module';
-import { ProductService } from '../../services/product.service';
+ import { ProductService } from '../../services/product.service';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { ThemeService } from '../../services/mode.service';
+import { product } from '../../models/product/product.module';
 @Component({
   selector: 'app-products',
   standalone: true,
@@ -14,7 +14,7 @@ import { ThemeService } from '../../services/mode.service';
 export class ProductsComponent implements OnInit {
   product: product[] = [];
   categoryid: number = 0;
-   constructor(private productService: ProductService,
+  constructor(private productService: ProductService,
     private route: ActivatedRoute,
     private router: Router,
     private themeService: ThemeService,
@@ -46,6 +46,7 @@ export class ProductsComponent implements OnInit {
     this.productService.addToCart(this.product[index]).subscribe(response => {
       console.log('Product added to cart:', response);
     });
+    this.router.navigate(["/ad"])
   }
 
 
@@ -73,6 +74,17 @@ export class ProductsComponent implements OnInit {
 
     }
   }
+
+  currentCategory: number = 0;
+
+  // navigateToCategory(categoryId: number) {
+  //     this.currentCategory = categoryId;
+  //  }
+
+  isActive(categoryId: number): boolean {
+    return this.currentCategory === categoryId;
+  }
+
 
 
 }

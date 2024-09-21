@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ProductService } from '../../services/product.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { product } from '../../models/product/product.module';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -20,7 +20,8 @@ export class EditProductComponent {
   constructor(
     private productService: ProductService,
     private route: ActivatedRoute,
-    private themeService: ThemeService,  // injecting the theme service here to use its methods in the component
+    private router: Router,
+    private themeService: ThemeService,   
   ) { }
 
   ngOnInit(): void {
@@ -34,10 +35,13 @@ export class EditProductComponent {
     this.productService.updateProduct(this.productId, this.product[0]).subscribe(
       response => {
         console.log('Product updated successfully:', response);
+        this.router.navigate(['/dashboard']);
+
       },
       error => {
         console.error('Error updating product:', error);
       }
+
     );
   }
   isDarkMode(): boolean {
