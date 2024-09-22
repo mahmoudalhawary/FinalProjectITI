@@ -22,7 +22,7 @@ export class ProductByIdComponent {
     this.productService.getAllProducts().subscribe(data => {
       // console.log(data);
       this.product = data.filter((item) => Number(item.id) === id);
-      // console.log(this.product);
+      //  console.log(this.product);
     });
   }
   addToCar(): void {
