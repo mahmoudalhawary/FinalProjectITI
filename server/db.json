@@ -1310,5 +1310,240 @@
         "https://iili.io/dR1tn0G.jpg"
       ]
     }
+  ],
+  "Users":[
+    [
+      {
+        "id": "1",
+        "name": "Ahmed Ali",
+        "email": "ahmed.ali@example.com",
+        "password": "password1",
+        "role": "Admin",
+        "orders": [
+          {
+            "id": "1",
+            "items": [
+              {
+                "productId": "1",
+                "quantity": 2
+              },
+              {
+                "productId": "2",
+                "quantity": 1
+              }
+            ],
+            "total": 1200
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "name": "Sarah Mohamed",
+        "email": "sarah.mohamed@example.com",
+        "password": "password2",
+        "role": "Admin",
+        "orders": [
+          {
+            "id": "2",
+            "items": [
+              {
+                "productId": "3",
+                "quantity": 1
+              },
+              {
+                "productId": "4",
+                "quantity": 3
+              }
+            ],
+            "total": 1800
+          }
+        ]
+      },
+      {
+        "id": "3",
+        "name": "Youssef Khaled",
+        "email": "youssef.khaled@example.com",
+        "password": "password3",
+        "role": "User",
+        "orders": [
+          {
+            "id": "3",
+            "items": [
+              {
+                "productId": "2",
+                "quantity": 1
+              },
+              {
+                "productId": "5",
+                "quantity": 2
+              }
+            ],
+            "total": 950
+          }
+        ]
+      },
+      {
+        "id": "4",
+        "name": "Ali Hassan",
+        "email": "ali.hassan@example.com",
+        "password": "password4",
+        "role": "User",
+        "orders": [
+          {
+            "id": "4",
+            "items": [
+              {
+                "productId": "1",
+                "quantity": 3
+              },
+              {
+                "productId": "4",
+                "quantity": 1
+              }
+            ],
+            "total": 1450
+          }
+        ]
+      },
+      {
+        "id": "5",
+        "name": "Mona Abdullah",
+        "email": "mona.abdullah@example.com",
+        "password": "password5",
+        "role": "User",
+        "orders": [
+          {
+            "id": "5",
+            "items": [
+              {
+                "productId": "2",
+                "quantity": 2
+              },
+              {
+                "productId": "6",
+                "quantity": 1
+              }
+            ],
+            "total": 1100
+          }
+        ]
+      },
+      {
+        "id": "6",
+        "name": "Khaled Emad",
+        "email": "khaled.emad@example.com",
+        "password": "password6",
+        "role": "User",
+        "orders": [
+          {
+            "id": "6",
+            "items": [
+              {
+                "productId": "1",
+                "quantity": 1
+              },
+              {
+                "productId": "5",
+                "quantity": 2
+              }
+            ],
+            "total": 950
+          }
+        ]
+      },
+      {
+        "id": "7",
+        "name": "Nader Said",
+        "email": "nader.said@example.com",
+        "password": "password7",
+        "role": "User",
+        "orders": [
+          {
+            "id": "7",
+            "items": [
+              {
+                "productId": "3",
+                "quantity": 2
+              },
+              {
+                "productId": "4",
+                "quantity": 1
+              }
+            ],
+            "total": 1300
+          }
+        ]
+      },
+      {
+        "id": "8",
+        "name": "Hala Ibrahim",
+        "email": "hala.ibrahim@example.com",
+        "password": "password8",
+        "role": "User",
+        "orders": [
+          {
+            "id": "8",
+            "items": [
+              {
+                "productId": "6",
+                "quantity": 1
+              },
+              {
+                "productId": "1",
+                "quantity": 1
+              }
+            ],
+            "total": 800
+          }
+        ]
+      },
+      {
+        "id": "9",
+        "name": "Sami Hassan",
+        "email": "sami.hassan@example.com",
+        "password": "password9",
+        "role": "User",
+        "orders": [
+          {
+            "id": "9",
+            "items": [
+              {
+                "productId": "2",
+                "quantity": 3
+              },
+              {
+                "productId": "3",
+                "quantity": 1
+              }
+            ],
+            "total": 1150
+          }
+        ]
+      },
+      {
+        "id": "10",
+        "name": "Fatima Ahmed",
+        "email": "fatima.ahmed@example.com",
+        "password": "password10",
+        "role": "User",
+        "orders": [
+          {
+            "id": "10",
+            "items": [
+              {
+                "productId": "4",
+                "quantity": 2
+              },
+              {
+                "productId": "1",
+                "quantity": 1
+              }
+            ],
+            "total": 1400
+          }
+        ]
+      }
+    ]
+    
   ]
 }

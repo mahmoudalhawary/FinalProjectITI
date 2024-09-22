@@ -36,3 +36,28 @@ export enum Name {
   Women = "Women",
 
 }
+
+
+export interface Users{
+  id: number;
+  name: string;
+  email: string;
+  password: string;
+  role: Role;
+  orders:Order[];
+}
+
+export enum Role {
+  Admin = "Admin",
+  User = "User",
+}
+export interface Order{
+  id: number;
+  "items":items[];
+  "total":number;
+}
+
+export interface items{
+  productId: string;
+  quantity: number;
+}

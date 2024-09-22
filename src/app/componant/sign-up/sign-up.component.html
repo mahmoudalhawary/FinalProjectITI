@@ -1,0 +1,37 @@
+<main class="d-flex justify-content-center container-fluid mx-2">
+    <div class="mt-5" style="width: 1450px; height: 500px; background-color: rgba(239, 237, 237, 0.748);">
+        <div class="text-center mt-3 mb-5 text-primary">
+            <h3><strong>Sign Up</strong></h3>
+        </div>
+        <div class="row d-flex justify-content-center align-items-center ms-3">
+
+            <div class="col-12 col-md-5 mb-3">
+                <label for="firstName" class="form-label">First name</label>
+                <input type="text" class="form-control" id="firstName" style="width: 90%;">
+            </div>
+            <div class="col-12 col-md-5 mb-3">
+                <label for="lastName" class="form-label">Last name</label>
+                <input type="text" class="form-control" id="lastName" style="width: 90%;">
+            </div>
+
+            <div class="col-12 col-md-5 mb-3">
+                <label for="inputEmail" class="form-label">Email</label>
+                <input type="email" class="form-control" id="inputEmail" style="width: 90%;">
+            </div>
+
+            <div class="col-12 col-md-5 mb-3">
+                <label for="inputPassword" class="form-label">Password</label>
+                <input type="password" class="form-control" id="inputPassword" style="width: 90%;">
+            </div>
+
+            <div class="d-flex align-items-center flex-column mt-4">
+                <a style="background-color: rgb(91, 91, 243); width: 30%;"  [routerLink]="['/home']" class="btn text-center text-light rounded-5">
+                    <strong>Sign Up</strong>
+                </a>
+                <a style="background-color: rgb(2, 25, 60); width: 30%;"  [routerLink]="['/dashboard']" class="btn text-center text-light rounded-5 mt-3">
+                    <strong>Login</strong>
+                </a>
+            </div>
+        </div>
+    </div>
+</main>
