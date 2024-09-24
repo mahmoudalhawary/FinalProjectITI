@@ -9,6 +9,8 @@ export class RoleService {
 
   private isAdmin: boolean = false;
   private isUser: boolean = false;
+  UserID?: number | any;
+  AdminId?: number | any;
 
   changeAdminRole(a: boolean): void {
     this.isAdmin = a;
@@ -23,6 +25,19 @@ export class RoleService {
 
   get isUserRole(): boolean {
     return this.isUser;
+  }
+
+  changeuserId(a: number): void {
+    this.UserID = a;
+  }
+  get getUserId(): number | any {
+    return this.UserID;
+  }
+  changeAdminId(a: number): void {
+    this.UserID = a;
+  }
+  get getAdminId(): number | any {
+    return this.AdminId;
   }
 
 

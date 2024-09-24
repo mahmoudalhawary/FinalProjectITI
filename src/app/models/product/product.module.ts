@@ -2,6 +2,17 @@
 
 
 export interface product {
+  userID: number;
+  category: Category;
+  _id: string;
+  id: number;
+  title: string;
+  price: number;
+  description: string;
+  images: string[];
+}
+export interface shopProduct {
+  userID: number;
   category: Category;
   _id: string;
   id: number;

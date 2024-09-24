@@ -7,8 +7,8 @@ import { HomeComponent } from './componant/home/home.component';
 import { AboutComponent } from './componant/about/about.component';
 import { SignUpComponent } from './componant/sign-up/sign-up.component';
 import { LoginComponent } from './componant/login/login.component';
-import { ShopcartComponent } from './componant/shopcart/shopcart.component';
-import { AddProductComponent } from './componant/add-product/add-product.component';
+ import { AddProductComponent } from './componant/add-product/add-product.component';
+import { ShoppingCartComponent } from './componant/shopping-cart/shopping-cart.component';
 
 export const routes: Routes = [
     { path: '', redirectTo: '/products', pathMatch: 'full' },
@@ -18,7 +18,7 @@ export const routes: Routes = [
     { path: 'dashboard', component: DashboardComponent, title: 'dashboard' },
     { path: 'dashboard/:AdminId', component: DashboardComponent, title: 'dashboard' },
     { path: 'home', component: HomeComponent, title: 'home' },
-    { path: 'shopcart', component: ShopcartComponent, title: 'shopcart' },
+    { path: 'shopcart/:userId', component: ShoppingCartComponent, title: 'shopcart' },
     { path: 'addProduct', component: AddProductComponent, title: 'shopcart' },
     { path: 'signup', component: SignUpComponent, title: 'home' },
     { path: 'login', component: LoginComponent, title: 'login' },

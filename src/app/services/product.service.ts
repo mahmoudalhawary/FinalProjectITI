@@ -1,13 +1,13 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { product } from '../models/product/product.module';
+import { product, shopProduct } from '../models/product/product.module';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductService {
-
+  shopProduct?: shopProduct
   // private apiUrl = "/api/products"
   private apiUrl = 'http://localhost:3000/products';
 
@@ -35,7 +35,8 @@ export class ProductService {
   private cartUrl = 'http://localhost:3000/ShopCar';
 
 
-  addToCart(item: product): Observable<product> {
+  addToCart(item: product) {
+
     return this.httpClient.post<product>(this.cartUrl, item);
   }
 

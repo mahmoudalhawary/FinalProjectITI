@@ -22,12 +22,17 @@
                             class="flex-sm-fill   fs-5 fw-bold  nav-link mx-1 " [routerLink]="['/home']">Home</a>
                     </li>
                     <li class="list-group-item"> <a [ngClass]="{ 'dMode': isDarkMode(), 'lMode': !isDarkMode() }"
-                            class="flex-sm-fill   fs-5 fw-bold  nav-link mx-1" [routerLink]="['/products']">Products</a>
+                            class="flex-sm-fill   fs-5 fw-bold  nav-link mx-1"
+                            (click)="nav('products',userID())">Products</a>
                     </li>
-                    <li class="list-group-item" [ngClass]="{ 'd-none': !isUser(),'d-block':isUser() }"> <a
+                    <!-- <li class="list-group-item"> <a [ngClass]="{ 'dMode': isDarkMode(), 'lMode': !isDarkMode() }"
+                            class="flex-sm-fill   fs-5 fw-bold  nav-link mx-1" [routerLink]="['/products']">Products</a>
+                    </li> -->
+                    <li class="list-group-item" [ngClass]="{ 'd-none': !userID(),'d-block':userID() }"> <button
                             [ngClass]="{ 'dMode': isDarkMode(), 'lMode': !isDarkMode() }"
-                            class="flex-sm-fill   fs-5 fw-bold  nav-link mx-1" [routerLink]="['/shopcart']">Shop
-                            Cart</a>
+                            class="flex-sm-fill   fs-5 fw-bold  nav-link mx-1"
+                            [routerLink]="['/shopcart',userID()]">Shop
+                            Cart</button>
                     </li>
                     <li class="list-group-item" [ngClass]="{ 'd-none': !isAdmin(),'d-block': isAdmin() }"> <a
                             [ngClass]="{ 'dMode': isDarkMode(), 'lMode': !isDarkMode() }"

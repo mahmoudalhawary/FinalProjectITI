@@ -3,7 +3,8 @@ import { ProductService } from '../../services/product.service';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { ThemeService } from '../../services/mode.service';
-import { product } from '../../models/product/product.module';
+import { product, shopProduct } from '../../models/product/product.module';
+import { RoleService } from '../../services/role.service';
 @Component({
   selector: 'app-products',
   standalone: true,
@@ -13,13 +14,20 @@ import { product } from '../../models/product/product.module';
 })
 export class ProductsComponent implements OnInit {
   product: product[] = [];
+  shopProduct: shopProduct[] = [];
   categoryid: number = 0;
+  userId?: number | boolean | any;
+  // userFlag?: boolean | any = false;
   constructor(private productService: ProductService,
     private route: ActivatedRoute,
     private router: Router,
     private themeService: ThemeService,
+    private roleService: RoleService
   ) { }
   ngOnInit(): void {
+    this.userId = Number(this.route.snapshot.paramMap.get('userId'));
+    // this.userFlag = this.isUser();
+
     this.route.queryParams.subscribe(params => {
       this.categoryid = Number(params['category'] || 0);
 
@@ -43,17 +51,32 @@ export class ProductsComponent implements OnInit {
 
   }
   addToCar(index: number): void {
-    this.productService.addToCart(this.product[index]).subscribe(response => {
-      console.log('Product added to cart:', response);
-    });
+    console.log("start");
 
-    // راجع
-    this.router.navigate(["/dashboard"])
+    if (this.isUser()) {
+      this.product[index].userID = this.userId;
+      this.productService.addToCart(this.product[index]).subscribe(response => {
+        console.log('Product added to cart:', response);
+      });
+      this.router.navigate(["/shopcart", this.userId])
+    } else {
+      this.router.navigate(["/login"])
+      console.log('Product not added to');
+
+    }
+    console.log("end");
   }
 
 
   isDarkMode(): boolean {
     return this.themeService.currentTheme;
+  }
+
+  isUser(): boolean {
+    return this.roleService.isUserRole;
+  }
+  isAdmin(): boolean {
+    return this.roleService.isAdminRole;
   }
 
 

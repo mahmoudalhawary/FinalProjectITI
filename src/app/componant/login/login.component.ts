@@ -44,6 +44,8 @@ export class LoginComponent {
                 }
                 else {
                     this.roleService.changeUserRole(true);
+                    this.roleService.changeuserId(this.user.id);
+ 
                     this.router.navigate(['/products', this.user.id]);
                 }
             } else {
