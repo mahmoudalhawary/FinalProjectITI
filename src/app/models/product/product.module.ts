@@ -13,9 +13,9 @@ export interface product {
 export interface Category {
   id: number;
   name: Name;
- 
+
 }
- 
+
 export interface Category2 {
   name: Name;
 }
@@ -36,26 +36,26 @@ export enum Name {
 }
 
 
-export interface Users{
+export interface Users {
   id: number;
-  name: string;
+  Fname: string;
+  Lname: string;
   email: string;
   password: string;
   role: Role;
-  orders:Order[];
+  orders: Order[];
 }
 
 export enum Role {
   Admin = "Admin",
   User = "User",
 }
-export interface Order{
+export interface Order {
   id: number;
-  "items":items[];
-  "total":number;
+  "items": items[];
+  "total": number;
 }
 
-export interface items{
+export interface items {
   productId: string;
-  quantity: number;
 }

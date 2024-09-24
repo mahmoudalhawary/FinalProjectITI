@@ -25,13 +25,21 @@ export class ProductService {
   updateProduct(id: Number, updatedProduct: product): Observable<any> {
     return this.httpClient.put(`${this.apiUrl}/${id}`, updatedProduct);
   }
+  addProduct(addProduct: product): Observable<any> {
+    return this.httpClient.post(`${this.apiUrl}`, addProduct);
+  }
+  deleteProduct(id: Number) {
+    return this.httpClient.delete(`${this.apiUrl}/${id}`);
+  }
 
-  private cartUrl = 'http://localhost:3000/ShopCar';  // URL to your JSON server for the cart
+  private cartUrl = 'http://localhost:3000/ShopCar';
 
 
   addToCart(item: product): Observable<product> {
     return this.httpClient.post<product>(this.cartUrl, item);
   }
+
+
 
 
 

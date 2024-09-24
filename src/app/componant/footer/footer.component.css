@@ -31,10 +31,7 @@ footer {
     width: 80%;
     margin-left: 10%;
 }
-.foooter {
-    display: flex;
-    justify-content: space-around;
-}
+ 
 .terms {
     margin-top: 40px;
     margin-right: 100px;

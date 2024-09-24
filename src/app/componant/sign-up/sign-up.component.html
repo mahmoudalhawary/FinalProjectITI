@@ -1,37 +1,69 @@
-<main class="d-flex justify-content-center container-fluid mx-2">
-    <div class="mt-5" style="width: 1450px; height: 500px; background-color: rgba(239, 237, 237, 0.748);">
+<main class="d-flex justify-content-center align-items-center container-fluid mx-2"
+    [ngClass]="{ 'dMode': isDarkMode(), 'lMode': !isDarkMode() }">
+    <div class="m-5 w-75" [ngClass]="{ 'dMode2': isDarkMode(), 'lMode2': !isDarkMode() }">
         <div class="text-center mt-3 mb-5 text-primary">
             <h3><strong>Sign Up</strong></h3>
         </div>
-        <div class="row d-flex justify-content-center align-items-center ms-3">
 
-            <div class="col-12 col-md-5 mb-3">
-                <label for="firstName" class="form-label">First name</label>
-                <input type="text" class="form-control" id="firstName" style="width: 90%;">
-            </div>
-            <div class="col-12 col-md-5 mb-3">
-                <label for="lastName" class="form-label">Last name</label>
-                <input type="text" class="form-control" id="lastName" style="width: 90%;">
+        <form (ngSubmit)="addUser()" class="row d-flex justify-content-center align-items-center" #signUpForm="ngForm">
+
+            <div class="row justify-content-center align-items-center">
+
+                <div class="col-12 col-md-5 mb-3">
+                    <label for="firstName" class="form-label">First Name :</label>
+                    <input type="text" class="form-control" [(ngModel)]="user.Fname" name="Fname" id="firstName"
+                        style="width: 90%;" [ngClass]="{ 'dMode': isDarkMode(), 'lMode': !isDarkMode() }"  required>
+
+                </div>
+
+                <div class="col-12 col-md-5 mb-3">
+                    <label for="lastName" class="form-label">Last Name :</label>
+                    <input type="text" class="form-control" [(ngModel)]="user.Lname" name="Lname" id="lastName"
+                        style="width: 90%;" [ngClass]="{ 'dMode': isDarkMode(), 'lMode': !isDarkMode() }"  required>
+
+                </div>
             </div>
 
-            <div class="col-12 col-md-5 mb-3">
-                <label for="inputEmail" class="form-label">Email</label>
-                <input type="email" class="form-control" id="inputEmail" style="width: 90%;">
+            <div class="row justify-content-center align-items-center">
+
+                <div class="col-12 col-md-5 mb-3">
+                    <label for="inputEmail" class="form-label">Email :</label>
+                    <input type="email" class="form-control" [(ngModel)]="user.email" name="email" id="inputEmail"
+                        style="width: 90%;" [ngClass]="{ 'dMode': isDarkMode(), 'lMode': !isDarkMode() }"  required email>
+
+                </div>
+
+                <div class="col-12 col-md-5 mb-3">
+                    <label for="inputPassword" class="form-label">Password :</label>
+                    <input type="password" class="form-control" [(ngModel)]="user.password" name="password"
+                        id="inputPassword" style="width: 90%;" [ngClass]="{ 'dMode': isDarkMode(), 'lMode': !isDarkMode() }"  required minlength="6">
+
+                </div>
             </div>
 
-            <div class="col-12 col-md-5 mb-3">
-                <label for="inputPassword" class="form-label">Password</label>
-                <input type="password" class="form-control" id="inputPassword" style="width: 90%;">
+            <div class="row justify-content-center align-items-center">
+
+                <div class="col-12 col-md-5 mb-3">
+                    <label for="role" class="form-label">Role :</label>
+                    <select class="form-select" name="role" [(ngModel)]="user.role" id="role" style="width: 90%;"
+                        [ngClass]="{ 'dMode': isDarkMode(), 'lMode': !isDarkMode() }"  required>
+                        <option value="" selected>Select Role</option>
+                        <option value="Admin">Admin</option>
+                        <option value="User">User</option>
+                    </select>
+
+                </div>
             </div>
 
-            <div class="d-flex align-items-center flex-column mt-4">
-                <a style="background-color: rgb(91, 91, 243); width: 30%;"  [routerLink]="['/home']" class="btn text-center text-light rounded-5">
-                    <strong>Sign Up</strong>
-                </a>
-                <a style="background-color: rgb(2, 25, 60); width: 30%;"  [routerLink]="['/dashboard']" class="btn text-center text-light rounded-5 mt-3">
-                    <strong>Login</strong>
-                </a>
+            <div class="row justify-content-center align-items-center">
+
+                <div class="d-flex align-items-center flex-column mt-4 col-11 col-md-4   ">
+
+                    <input type="submit" name="submit" [disabled]="!validateForm()"
+                        class="  btn text-center rounded-5 w-100 signUpBtn me-5" value="Sign Up">
+                </div>
+                <a [routerLink]="['/login']" routerLinkActive="router-link-active" class="btn">sing in</a>
             </div>
-        </div>
+        </form>
     </div>
 </main>

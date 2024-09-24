@@ -1,58 +1,56 @@
-<div class="row h-100 w-100 p-4" [ngClass]="{ 'dMode': isDarkMode(), 'lMode': !isDarkMode() }">
-    <h2>
-        <span class="move">Add Product</span>
-        {{ product.title }}
-    </h2>
-    <div class="d-flex justify-content-center">
-        <form (ngSubmit)="saveProduct()">
-            <div class="row justify-content-between">
-                <div class="col-4">
-                    <select [(ngModel)]="product.category" [ngModelOptions]="{standalone: true}">
-                        <option *ngIf="list.length === 0" value="">No categories found</option>
-                        <option *ngFor="let item of list" [value]="item">{{item}}</option>
-                    </select>
-                    
-                </div>
-                <div class="col-4 m-2">
-                    <label for="title" class="fs-5 move m-1">Title:</label>
-                    <input class="btn border-secondary" id="title"
-                        [ngClass]="{ 'dMode': isDarkMode(), 'lMode': !isDarkMode() }" [(ngModel)]="product.title"
-                        name="title" />
-                </div>
-                <div class="col-4 m-2">
-                    <label for="price" class="fs-5 move m-1">Price:</label>
-                    <input class="btn border-secondary" id="price"
-                        [ngClass]="{ 'dMode': isDarkMode(), 'lMode': !isDarkMode() }" [(ngModel)]="product.price"
-                        name="price" type="number" />
-                </div>
-            </div>
+<div class="container-fluid" [ngClass]="{ 'dMode': isDarkMode(), 'lMode': !isDarkMode() }">
+    <div *ngIf="product">
+        <h2 class="text-center mb-4">Edit Product: {{ product.title }}</h2>
 
-            <div class="row justify-content-between">
-                <div class="col-4 m-2">
-                    <label for="description" class="fs-5 move m-1">Description:</label>
-                    <textarea class="btn border-secondary" id="description"
-                        [ngClass]="{ 'dMode': isDarkMode(), 'lMode': !isDarkMode() }" [(ngModel)]="product.description"
-                        name="description"></textarea>
-                </div>
-                <div class="col-4 m-2">
-                    <label for="category" class="fs-5 move m-1">Category:</label>
-                    <input class="btn border-secondary" id="category"
-                        [ngClass]="{ 'dMode': isDarkMode(), 'lMode': !isDarkMode() }"
-                        [(ngModel)]="product.category.name" name="category" />
-                </div>
-            </div>
+        <div class="d-flex justify-content-center">
+            <form (ngSubmit)="saveProduct()" class="w-100 w-md-50">
+                <div class="row">
+                    <div class="col-12 col-md-6 form-group mb-3">
+                        <label for="title" class="fs-6 fw-bold">Title:</label>
+                        <input class="form-control h43 " id="title" [(ngModel)]="product.title" name="title"
+                            [ngClass]="{ 'dMode2': isDarkMode(), 'lMode2': !isDarkMode() }" />
+                    </div>
 
-            <!-- <div *ngFor="let image of product.images; let i = index">
-                <div class="image-thumbnail">
-                    <img [src]="image" alt="Product Image" class="rounded m-1" style="width: 100px; height: 100px;" />
-                    <label for="image-{{ i }}" class="fs-5 move m-1">Image {{ i + 1 }} URL:</label>
-                    <input id="image-{{ i }}" [ngClass]="{ 'dMode': isDarkMode(), 'lMode': !isDarkMode() }"
-                        [(ngModel)]="product.images[i]" name="images-{{ i }}" />
-                </div>
-            </div> -->
+                    <div class="col-12 col-md-6 form-group mb-3">
+                        <label for="price" class="fs-6 fw-bold">Price:</label>
+                        <input class="form-control h43" id="price" [(ngModel)]="product.price" name="price"
+                            type="number" [ngClass]="{ 'dMode2': isDarkMode(), 'lMode2': !isDarkMode() }" />
+                    </div>
 
-            <button type="submit" class="btn-move p-3 rounded">
-                Add Product </button>
-        </form>
+                    <div class="col-12 form-group mb-3">
+                        <label for="description" class="fs-6 fw-bold">Description:</label>
+                        <textarea class="form-control h43" id="description" [(ngModel)]="product.description"
+                            name="description"
+                            [ngClass]="{ 'dMode2': isDarkMode(), 'lMode2': !isDarkMode() }"></textarea>
+                    </div>
+
+                    <div class="col-12 form-group mb-3">
+                        <label for="category" class="fs-6 fw-bold">Category:</label>
+                        <select class="form-control h43" id="category" name="category" 
+                                ()="handleCategoryChange($event)" 
+                                [ngClass]="{ 'dMode2': isDarkMode(), 'lMode2': !isDarkMode() }">
+                            <option *ngFor="let category of categories; let i = index" 
+                                    [value]="category.name" 
+                                    [attr.data-id]="i">
+                              {{ category.name }}
+                            </option>
+                        </select>
+                      </div>
+                      
+                    <div class="row">
+
+                        <div *ngFor="let image of product.images; let i = index"
+                            class="col-12 col-mdl-6 col-sm-4 form-group mb-3">
+                        <h1>eqw</h1>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary p-3 rounded my-1">Update Product</button>
+                </div>
+            </form>
+        </div>
     </div>
 </div>

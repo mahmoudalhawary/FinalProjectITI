@@ -84,11 +84,14 @@ html {
     color: #ffffff;
     font-size: xx-large;
 }
-.move{
+
+.move {
     color: #703bf7;
     font-size: 23px;
 
-font-weight: 500;}
+    font-weight: 500;
+}
+
 .ptnDMode {
     color: #25a5e9;
     background-color: #1a1a1a;
@@ -143,12 +146,47 @@ body {
 }
 
 .navbar {
-    border-bottom: 1px solid rgba(122, 122, 122, 0.563);
-    box-shadow: 0 4px 8px 0 rgba(115, 115, 115, 0.2), 0 6px 20px 0 rgba(129, 129, 129, 0.19);
+    border-bottom: .4px solid rgba(122, 122, 122, 0.563);
+    box-shadow: 0 2px 4px 0 rgba(96, 96, 96, 0.2), 0 6px 20px 0 rgba(129, 129, 129, 0.19);
 
 }
 
 .active-class {
     background-color: #007bff;
-     color: white;
- }
+    color: white;
+}
+
+.signUpBtn {
+    background-color: rgb(91, 91, 243);
+    color: white;
+
+}
+
+.loginbtn:hover {
+    background-color: rgb(75, 75, 207);
+    color: white;
+
+}
+
+.loginbtn {
+    background-color: rgb(91, 91, 243);
+    color: white;
+
+}
+
+.signUpBtn:hover {
+    background-color: rgb(75, 75, 207);
+    color: white;
+
+}
+
+.h53 {
+    height: 53px;
+}
+.h43 {
+    height: 48px;
+}
+
+.bg-red {
+     color: #ff0000;
+}

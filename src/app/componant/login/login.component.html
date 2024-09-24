@@ -1,19 +1,30 @@
-<div class="  container-fluid  "  style="width:100%; height: 600px;"> 
-    <form action=""  class="mt-5 d-flex align-items-center flex-column ms-2" style="width: 100%;height: 100%; background-color: rgba(239, 237, 237, 0.748);">
-        <div class="text-center mt-3 mb-5 text-primary "><h3> <strong>Login</strong></h3></div>
-         
-        <div class="  d-flex align-items-center flex-column  "style="width: 100%; height: 100px;" >
-            <label for="email" class="form-label " style="width: 40%; "><strong>Email Addrees:</strong></label>
-            <input   type="email" class="form-control " id="email" placeholder="Enter email" name="email" style="width: 40%; height:50% ;">
-          </div>
-          <div class="  d-flex align-items-center flex-column "style="width: 100%;height: 100px;" >
-            <label for="pwd" class="form-label "  style="width: 40%;"><strong>Password:</strong></label>
-            <input type="password" class="form-control " id="pwd" placeholder="Enter password" name="pswd"style="width: 40%; height:50% ;">
-          </div>
-          <div class="d-flex align-items-center flex-column "style="width: 100%;height: 100px;" >
-          <a style="background-color: rgb(91, 91, 243); width: 25%; height:50px ; " class=" btn text-center wt-50 text-light mt-3 rounded-5 h-50"  [routerLink]="['/dashboard']"> <strong>Login <br></strong></a>
-          <a style="background-color: rgb(2, 25, 60); width:25%; height:35% ; " class=" btn text-light mt-3 rounded-5 mb-5 h-50 " [routerLink]="['/signup']"> <strong>Sing Up</strong></a>
-        </div>
-    </form>
-</div>
+<div class="  d-flex justify-content-center align-items-center   container-fluid w-100 " style="width:100%;  "
+  [ngClass]="{ 'dMode': isDarkMode(), 'lMode': !isDarkMode() }">
 
+  <form (ngSubmit)="login()" class="m-5 w-75 d-flex align-items-center flex-column ms-2"
+    [ngClass]="{ 'dMode2': isDarkMode(), 'lMode2': !isDarkMode() }">
+    <div class="text-center mt-3 mb-5 text-primary ">
+      <h3> <strong>Login</strong></h3>
+    </div>
+
+    <div class="row justify-content-center mx-2">
+      <div class="  d-flex align-items-start flex-column  col-12   ">
+        <label for="email" class="form-label " style="width: 40%; "><strong>Email Addrees:</strong></label>
+        <input type="email" class=" col-12  border rounded-3  px-3 h53" id="email" [(ngModel)]="user.email"
+          placeholder="Enter email" name="email" [ngClass]="{ 'dMode': isDarkMode(), 'lMode': !isDarkMode() }">
+      </div>
+      <div class="  d-flex align-items-start flex-column col-12  mx-2 my-3">
+        <label for="pwd" class="form-label " style="width: 40%;"><strong>Password:</strong></label>
+        <input type="password" class="col-12  border rounded-3  px-3 h53  " id="pwd" [(ngModel)]="user.password"
+          placeholder="Enter password" name="pswd" [ngClass]="{ 'dMode': isDarkMode(), 'lMode': !isDarkMode() }">
+      </div>
+      <div class="d-flex align-items-center flex-column col-12  ">
+
+        <input type="submit" value="Log In" class="loginbtn h53 col-12 mt-2 fs-4 fw-bold rounded-3"
+          [disabled]="!validateForm()">
+        <a style="  width:25%; height:35% ; " class=" align-self-end   rounded-5 mb-5 h-50 " [routerLink]="['/signup']">
+          Sing Up</a>
+      </div>
+    </div>
+  </form>
+</div>

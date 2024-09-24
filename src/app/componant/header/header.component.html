@@ -20,9 +20,19 @@
                 <ul class="d-flex     ">
                     <li class="list-group-item"> <a [ngClass]="{ 'dMode': isDarkMode(), 'lMode': !isDarkMode() }"
                             class="flex-sm-fill   fs-5 fw-bold  nav-link mx-1 " [routerLink]="['/home']">Home</a>
-                    </li>   
+                    </li>
                     <li class="list-group-item"> <a [ngClass]="{ 'dMode': isDarkMode(), 'lMode': !isDarkMode() }"
                             class="flex-sm-fill   fs-5 fw-bold  nav-link mx-1" [routerLink]="['/products']">Products</a>
+                    </li>
+                    <li class="list-group-item" [ngClass]="{ 'd-none': !isUser(),'d-block':isUser() }"> <a
+                            [ngClass]="{ 'dMode': isDarkMode(), 'lMode': !isDarkMode() }"
+                            class="flex-sm-fill   fs-5 fw-bold  nav-link mx-1" [routerLink]="['/shopcart']">Shop
+                            Cart</a>
+                    </li>
+                    <li class="list-group-item" [ngClass]="{ 'd-none': !isAdmin(),'d-block': isAdmin() }"> <a
+                            [ngClass]="{ 'dMode': isDarkMode(), 'lMode': !isDarkMode() }"
+                            class="flex-sm-fill   fs-5 fw-bold  nav-link mx-1" [routerLink]="['/dashboard']"> Dashboard
+                        </a>
                     </li>
                     <li class="list-group-item"> <a [ngClass]="{ 'dMode': isDarkMode(), 'lMode': !isDarkMode() }"
                             class="flex-sm-fill   fs-5 fw-bold  nav-link mx-1" [routerLink]="['/about']">About</a>
@@ -42,11 +52,20 @@
 
             </div>
 
-            <form class="container-fluid  d-flex justify-content-end">
-                <button class="btn btn-sm btn-outline-secondary  " type="button"> <i
-                        class="fa-solid fa-right-to-bracket"></i>Login</button>
-                <button class="btn btn-sm btn-outline-secondary mx-2" type="button"><i class="fa-solid fa-user-plus"></i>Sing
-                    Up</button>
+            <form class="container-fluid d-flex justify-content-end">
+                <div *ngIf="!isUser() && !isAdmin()">
+                    <button class="btn btn-sm btn-outline-secondary mx-2" [routerLink]="['/login']" type="button">
+                        <i class="fa-solid fa-right-to-bracket"></i> Log In
+                    </button>
+                    <button class="btn btn-sm btn-outline-secondary mx-2" [routerLink]="['/signup']" type="button">
+                        <i class="fa-solid fa-user-plus"></i> Sign Up
+                    </button>
+                </div>
+
+                <button *ngIf="isUser() || isAdmin()" class="btn btn-sm btn-outline-secondary mx-2" (click)="logout()"
+                    type="button">
+                    <i class="fa-solid fa-user-plus"></i> Log Out
+                </button>
             </form>
         </div>
     </div>

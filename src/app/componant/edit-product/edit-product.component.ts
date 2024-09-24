@@ -21,7 +21,7 @@ export class EditProductComponent {
     private productService: ProductService,
     private route: ActivatedRoute,
     private router: Router,
-    private themeService: ThemeService,   
+    private themeService: ThemeService,
   ) { }
 
   ngOnInit(): void {
@@ -43,6 +43,16 @@ export class EditProductComponent {
       }
 
     );
+  } onFileSelected(event: any, index: number) {
+    const file = event.target.files[0];
+    if (file) {
+      // Logic to handle file upload or convert it to a URL for preview
+      const reader = new FileReader();
+      reader.onload = (e: any) => {
+        this.product[0].images[index] = e.target.result;  // Update the image with the selected file's URL
+      };
+      reader.readAsDataURL(file);
+    }
   }
   isDarkMode(): boolean {
     return this.themeService.currentTheme;

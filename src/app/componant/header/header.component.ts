@@ -1,21 +1,25 @@
 import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
- import { CommonModule } from '@angular/common';
+import { Router, RouterLink } from '@angular/router';
+import { CommonModule } from '@angular/common';
 import { ThemeService } from '../../services/mode.service';
- import { faMoon, faSun   } from '@fortawesome/free-solid-svg-icons';
+import { faMoon, faSun  } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
- 
+import { RoleService } from '../../services/role.service';
+import { FormsModule } from '@angular/forms';
+
 var modee: any;
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [RouterLink, CommonModule,FontAwesomeModule],
+  imports: [RouterLink, FormsModule, CommonModule, FontAwesomeModule],
 
   templateUrl: './header.component.html',
   styleUrl: './header.component.css'
 })
 export class HeaderComponent {
-  constructor(private themeService: ThemeService) {}
+  faMoon = faMoon;
+  faSun = faSun;
+   constructor(private themeService: ThemeService, private roleService: RoleService, private router: Router) { }
 
   toggleTheme(): void {
     this.themeService.toggleTheme();
@@ -25,8 +29,25 @@ export class HeaderComponent {
   isDarkMode(): boolean {
     return this.themeService.currentTheme;
   }
-  faMoon = faMoon;
-  faSun = faSun;
- 
-  
+
+
+
+  isUser(): boolean {
+    return this.roleService.isUserRole;
+  }
+  isAdmin(): boolean {
+    return this.roleService.isAdminRole;
+  }
+
+
+
+
+
+  logout() {
+    this.roleService.changeUserRole(false);
+    this.roleService.changeUserRole(false);
+    this.router.navigate(['/products'])
+  }
+
+
 }

@@ -1,20 +1,22 @@
 import { Component, OnInit } from '@angular/core';
-import { product } from '../../../models/product/product.module';
-import { ProductService } from '../../../services/product.service';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
-import { ThemeService } from '../../../services/mode.service';
 import { CommonModule } from '@angular/common';
+import { ProductService } from '../../services/product.service';
+import { ThemeService } from '../../services/mode.service';
+import { product } from '../../models/product/product.module';
+import { faRemove } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [CommonModule, RouterLink],
+  imports: [CommonModule, RouterLink, FontAwesomeModule],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css'
 })
 export class DashboardComponent implements OnInit {
   product: product[] = [];
-
+  faRemove = faRemove;
   constructor(private productService: ProductService,
     private route: ActivatedRoute,
     private router: Router,
@@ -34,6 +36,16 @@ export class DashboardComponent implements OnInit {
   }
   Editer(item: product): void {
     console.log('edit product with ID:', item._id);
-    // this.router.navigate(['editByID', item]);
   }
+
+
+  delete(id: number) {
+    this.productService.deleteProduct(id).subscribe(() => {
+      console.log(`Product with id ${id} deleted successfully`);
+    },
+      (error) => {
+        console.error('Error deleting product:', error);
+      }
+    );
+ }
 }

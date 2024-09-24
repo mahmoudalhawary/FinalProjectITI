@@ -7,7 +7,7 @@ export var isDarkMode: boolean = false;
 })
 export class ThemeService {
 
-   private isDarkMode: boolean = false;
+  private isDarkMode: boolean = true;
 
   toggleTheme(): void {
     this.isDarkMode = !this.isDarkMode;
@@ -16,4 +16,6 @@ export class ThemeService {
   get currentTheme(): boolean {
     return this.isDarkMode;
   }
+
+  
 }

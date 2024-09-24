@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
- import { ProductService } from '../../services/product.service';
+import { ProductService } from '../../services/product.service';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { ThemeService } from '../../services/mode.service';
@@ -46,7 +46,9 @@ export class ProductsComponent implements OnInit {
     this.productService.addToCart(this.product[index]).subscribe(response => {
       console.log('Product added to cart:', response);
     });
-    this.router.navigate(["/ad"])
+
+    // راجع
+    this.router.navigate(["/dashboard"])
   }
 
 
@@ -61,25 +63,19 @@ export class ProductsComponent implements OnInit {
 
   truncatedText(text: string): string {
     const words = text.split(' ');
-    if (this.showFullText || words.length <= 7) {
-      // this.showFullText = true;
+    if (this.showFullText || words.length <= 6) {
       return text;
     } else {
 
-      // this.showFullText = false;
 
       return words.slice(0, 7).join(' ') + '...';
 
-      // return {{ "<a>dsa </a> "} }
 
     }
   }
 
   currentCategory: number = 0;
 
-  // navigateToCategory(categoryId: number) {
-  //     this.currentCategory = categoryId;
-  //  }
 
   isActive(categoryId: number): boolean {
     return this.currentCategory === categoryId;
