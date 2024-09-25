@@ -3,7 +3,7 @@ import { ProductService } from '../../services/product.service';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { ThemeService } from '../../services/mode.service';
-import { product, shopProduct } from '../../models/product/product.module';
+import { Category, product, shopProduct } from '../../models/product/product.module';
 import { RoleService } from '../../services/role.service';
 @Component({
   selector: 'app-products',
@@ -16,6 +16,7 @@ export class ProductsComponent implements OnInit {
   product: product[] = [];
   shopProduct: shopProduct[] = [];
   categoryid: number = 0;
+  categories: Category[] = [];
   userId?: number | boolean | any;
   // userFlag?: boolean | any = false;
   constructor(private productService: ProductService,
@@ -26,14 +27,15 @@ export class ProductsComponent implements OnInit {
   ) { }
   ngOnInit(): void {
     this.userId = Number(this.route.snapshot.paramMap.get('userId'));
-    // this.userFlag = this.isUser();
 
     this.route.queryParams.subscribe(params => {
       this.categoryid = Number(params['category'] || 0);
 
 
     });
-
+    this.productService.getCategories().subscribe(data => {
+      this.categories = data;
+    })
     this.productService.getAllProducts().subscribe(data => {
       this.product = data;
 

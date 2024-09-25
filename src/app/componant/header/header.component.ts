@@ -19,14 +19,14 @@ var modee: any;
 export class HeaderComponent implements OnInit {
   faMoon = faMoon;
   faSun = faSun;
-  userId?: number;
+  // userId?: number;
   constructor(private themeService: ThemeService, private route: ActivatedRoute,
     private roleService: RoleService, private router: Router) { }
   ngOnInit(): void {
     // this.userId = Number(this.route.snapshot.paramMap.get('userId'));
 
-    this.userId = this.roleService.getUserId;
-    console.log("userIduserIduserId  " + this.userId)
+    // this.userId = this.roleService.getUserId;
+    // console.log("userIduserIduserId  " + this.userId)
   }
 
 
@@ -47,23 +47,33 @@ export class HeaderComponent implements OnInit {
   }
 
 
-   isDarkMode(): boolean {
+  isDarkMode(): boolean {
     return this.themeService.currentTheme;
   }
   userID(): number {
     return this.roleService.getUserId
   }
-  adminId(): number {
-    return this.roleService.AdminId
+  adminID(): number {
+    // console.log("login" + this.roleService.getAdminId);
+    return this.roleService.getAdminId
+
   }
 
 
 
   isUser(): boolean {
+    // console.log("login user .............." + this.roleService.isUserRole);
+
     return this.roleService.isUserRole;
   }
   isAdmin(): boolean {
+
+    // test is adimn
+    // console.log("login admin  .............." + this.roleService.isAdminRole);
+
     return this.roleService.isAdminRole;
+
+
   }
 
 

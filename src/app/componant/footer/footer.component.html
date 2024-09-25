@@ -1,14 +1,17 @@
-<div class="body " [ngClass]="{ 'dMode': isDarkMode(), 'lMode': !isDarkMode() }">
-    <footer >
+<div class="body d-flex flex-column " style="min-height: 78vh;"
+    [ngClass]="{ 'dMode': isDarkMode(), 'lMode': !isDarkMode() }">
+
+
+    <footer class="mt-auto">
         <hr />
         <div class="d-block d-xl-flex">
-            <div class="terms" >
+            <div class="terms">
                 <a href="#">Terms</a>
                 <span>-</span>
                 <a href="#">Privacy Policy</a>
             </div>
             <div class="products">
-                <a  href="#"><span>Products</span></a>
+                <a href="#"><span>Products</span></a>
                 <a href="#">Web Studio</a>
                 <a href="#">DynamicBox Flex</a>
                 <a href="#">Programming Forms</a>
@@ -47,6 +50,4 @@
             </div>
         </div>
     </footer>
-
 </div>
- 

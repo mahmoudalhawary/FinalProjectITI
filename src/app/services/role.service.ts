@@ -31,13 +31,25 @@ export class RoleService {
     this.UserID = a;
   }
   get getUserId(): number | any {
-    return this.UserID;
+    if (this.UserID < 0) {
+      return null;
+    } else {
+
+      return this.UserID;
+    }
   }
   changeAdminId(a: number): void {
     this.UserID = a;
   }
   get getAdminId(): number | any {
-    return this.AdminId;
+
+    if (this.AdminId < 0) {
+      return null;
+    } else {
+
+      return this.AdminId;
+
+    }
   }
 
 

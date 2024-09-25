@@ -11,6 +11,16 @@ export interface product {
   description: string;
   images: string[];
 }
+export interface product2 {
+  userID: number;
+  category: Category;
+  _id: string;
+  id: string;
+  title: string;
+  price: number;
+  description: string;
+  images: string[];
+}
 export interface shopProduct {
   userID: number;
   category: Category;
@@ -23,28 +33,15 @@ export interface shopProduct {
 }
 export interface Category {
   id: number;
-  name: Name;
+  name: string;
 
 }
-
 export interface Category2 {
-  name: Name;
-}
-
-export enum Name {
-  Electronics = "Electronics",
-  Furniture = "Furniture",
-  Grosery = "Grosery",
-  Kids = "Kids",
-  Men = "Men",
-  Miscellaneous = "Miscellaneous",
-  Nuevo = "nuevo",
-  Rrr = "Rrr",
-  Shoes = "Shoes",
-  TestingCategory = "Testing category ",
-  Women = "Women",
+  id: string;
+  name: string;
 
 }
+ 
 
 
 export interface Users {

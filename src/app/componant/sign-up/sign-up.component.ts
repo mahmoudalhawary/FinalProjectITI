@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UsersService } from '../../services/users.service';
 import { Router, RouterLink, RouterModule } from '@angular/router';
-import { Users } from '../../models/product/product.module';
+import { Role, Users } from '../../models/product/product.module';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ThemeService } from '../../services/mode.service';
@@ -41,11 +41,12 @@ export class SignUpComponent implements OnInit {
 
   addUser() {
     if (this.validateForm()) {
+      this.user.role = Role.User;
       this.user.id = (this.sizeOFallusers + 1);
       this.usersService.addUsers(this.user).subscribe(
         response => {
           console.log('User added successfully:', response);
-          this.router.navigate(['/dashboard']);
+          this.router.navigate(['/products']);
         },
         error => {
           console.error('Error during sign up:', error);

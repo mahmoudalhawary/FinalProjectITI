@@ -1,0 +1,37 @@
+<div class="container py-5" [ngClass]="{ 'dMode': isDarkMode(), 'lMode': !isDarkMode() }">
+    <h2 class="mb-4 text-center">Categories</h2>
+
+    <!-- Form to Add Category -->
+    <form (ngSubmit)="addCategorie()" class="d-flex flex-column flex-md-row justify-content-center mb-5">
+        <input type="text" [(ngModel)]="CateName" name="categoryName" 
+               class="form-control mb-3 mb-md-0 w-100 w-md-50" placeholder="Enter new category" required>
+        <input type="submit" class="btn btn-primary ms-md-3" value="Add Category">
+    </form>
+
+    <!-- Categories Table -->
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover" 
+               [ngClass]="{ 'dMode2': isDarkMode(), 'lMode2': !isDarkMode() }">
+            <thead class="table-dark">
+                <tr>
+                    <th>Category</th>
+                    <th>Total Products</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let categorie of categories; let i = index">
+                    <td>{{ categorie.name }}</td>
+                    <td>{{ getAllProduct(categorie.id) }}</td>
+                    <td>
+                        <button class="btn btn-warning btn-sm" (click)="editCategorie(i)">Edit</button>
+                    </td>
+                    <td>
+                        <button class="btn btn-danger btn-sm" (click)="deleteCategorie(categorie.id)">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

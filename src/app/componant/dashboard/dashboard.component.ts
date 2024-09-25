@@ -30,6 +30,8 @@ export class DashboardComponent implements OnInit {
       console.log("this.product from   dashboard);" + this.product[5].description);
 
     });
+
+
   }
   isDarkMode(): boolean {
     return this.themeService.currentTheme;
@@ -40,12 +42,14 @@ export class DashboardComponent implements OnInit {
 
 
   delete(id: number) {
-    this.productService.deleteProduct(id).subscribe(() => {
-      console.log(`Product with id ${id} deleted successfully`);
-    },
-      (error) => {
-        console.error('Error deleting product:', error);
-      }
-    );
- }
+    if (confirm("are you sure")) {
+      this.productService.deleteProduct(id).subscribe(() => {
+        console.log(`Product with id ${id} deleted successfully`);
+      },
+        (error) => {
+          console.error('Error deleting product:', error);
+        }
+      );
+    }
+  }
 }

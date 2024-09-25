@@ -28,7 +28,7 @@
                     <!-- <li class="list-group-item"> <a [ngClass]="{ 'dMode': isDarkMode(), 'lMode': !isDarkMode() }"
                             class="flex-sm-fill   fs-5 fw-bold  nav-link mx-1" [routerLink]="['/products']">Products</a>
                     </li> -->
-                    <li class="list-group-item" [ngClass]="{ 'd-none': !userID(),'d-block':userID() }"> <button
+                    <li class="list-group-item" [ngClass]="{ 'd-none': !isUser(),'d-block':isUser() }"> <button
                             [ngClass]="{ 'dMode': isDarkMode(), 'lMode': !isDarkMode() }"
                             class="flex-sm-fill   fs-5 fw-bold  nav-link mx-1"
                             [routerLink]="['/shopcart',userID()]">Shop
@@ -36,9 +36,15 @@
                     </li>
                     <li class="list-group-item" [ngClass]="{ 'd-none': !isAdmin(),'d-block': isAdmin() }"> <a
                             [ngClass]="{ 'dMode': isDarkMode(), 'lMode': !isDarkMode() }"
-                            class="flex-sm-fill   fs-5 fw-bold  nav-link mx-1" [routerLink]="['/dashboard']"> Dashboard
+                            class="flex-sm-fill   fs-5 fw-bold  nav-link mx-1" (click)="nav('dashboard',adminID())">
+                            Dashboard
                         </a>
                     </li>
+                    <!-- <li class="list-group-item" [ngClass]="{ 'd-none': !adminID(),'d-block': adminID() }"> <a
+                            [ngClass]="{ 'dMode': isDarkMode(), 'lMode': !isDarkMode() }"
+                            class="flex-sm-fill   fs-5 fw-bold  nav-link mx-1" [routerLink]="['/dashboard']"> Dashboard
+                        </a>
+                    </li> -->
                     <li class="list-group-item"> <a [ngClass]="{ 'dMode': isDarkMode(), 'lMode': !isDarkMode() }"
                             class="flex-sm-fill   fs-5 fw-bold  nav-link mx-1" [routerLink]="['/about']">About</a>
                     </li>
@@ -58,7 +64,7 @@
             </div>
 
             <form class="container-fluid d-flex justify-content-end">
-                <div *ngIf="!isUser() && !isAdmin()">
+                <div *ngIf="!userID() && !adminID()">
                     <button class="btn btn-sm btn-outline-secondary mx-2" [routerLink]="['/login']" type="button">
                         <i class="fa-solid fa-right-to-bracket"></i> Log In
                     </button>
@@ -67,7 +73,7 @@
                     </button>
                 </div>
 
-                <button *ngIf="isUser() || isAdmin()" class="btn btn-sm btn-outline-secondary mx-2" (click)="logout()"
+                <button *ngIf="adminID() || userID()" class="btn btn-sm btn-outline-secondary mx-2" (click)="logout()"
                     type="button">
                     <i class="fa-solid fa-user-plus"></i> Log Out
                 </button>
@@ -75,47 +81,3 @@
         </div>
     </div>
 </nav>
-
-<!-- <nav class="navbar navbar-light  fixed-top d-lg-none container-fluid"
-    [ngClass]="{ 'dMode': isDarkMode(), 'lMode': !isDarkMode() }">
-
-    <div class="container-fluid d-flex flex-nowrap">
-
-        <div class="col 4  mt-1 order-3">
-            <form class="container-fluid  d-flex justify-content-end">
-                <button class="btn btn-sm btn-outline-secondary me-2" type="button"> <i
-                        class="fa-solid fa-right-to-bracket"></i>Login</button>
-                <button class="btn btn-sm btn-outline-secondary" type="button"><i class="fa-solid fa-user-plus"></i>Sing
-                    Up</button>
-            </form>
-        </div>
-        <div class="d-flex justify-content-center align-items-center order-2"><a class="navbar-brand text-center ms-5"
-                href="#">React Shop</a></div>
-        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar"
-            aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar"
-            aria-labelledby="offcanvasDarkNavbarLabel">
-            <div class="offcanvas-header ">
-                <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Shop</h5>
-                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
-                    aria-label="Close"></button>
-            </div>
-            <div class="offcanvas-body">
-                <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" [routerLink]="['/home']">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" [routerLink]="['/products']">Products</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" [routerLink]="['/about']">About</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-
-</nav> -->

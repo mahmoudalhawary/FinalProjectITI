@@ -6,6 +6,8 @@
 
         <button [routerLink]="['/addProduct' ]" class="btn border-1 border  m-2" routerLinkActive="active"
             [ngClass]="{ 'dMode': isDarkMode(), 'lMode': !isDarkMode() }">Add Product</button>
+        <button [routerLink]="['/addCategory' ]" class="btn border-1 border  m-2" routerLinkActive="active"
+            [ngClass]="{ 'dMode': isDarkMode(), 'lMode': !isDarkMode() }">Add Category</button>
     </div>
     <table class="border border-2 p-5  rounded-3   w-100 ">
         <thead class="border w-100   bg-secondary ">

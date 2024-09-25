@@ -9,6 +9,7 @@ import { SignUpComponent } from './componant/sign-up/sign-up.component';
 import { LoginComponent } from './componant/login/login.component';
  import { AddProductComponent } from './componant/add-product/add-product.component';
 import { ShoppingCartComponent } from './componant/shopping-cart/shopping-cart.component';
+import { AddCategoryComponent } from './componant/add-category/add-category.component';
 
 export const routes: Routes = [
     { path: '', redirectTo: '/products', pathMatch: 'full' },
@@ -20,6 +21,7 @@ export const routes: Routes = [
     { path: 'home', component: HomeComponent, title: 'home' },
     { path: 'shopcart/:userId', component: ShoppingCartComponent, title: 'shopcart' },
     { path: 'addProduct', component: AddProductComponent, title: 'shopcart' },
+    { path: 'addCategory', component: AddCategoryComponent, title: 'shopcart' },
     { path: 'signup', component: SignUpComponent, title: 'home' },
     { path: 'login', component: LoginComponent, title: 'login' },
     { path: 'about', component: AboutComponent, title: 'about' },

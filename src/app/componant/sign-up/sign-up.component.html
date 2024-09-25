@@ -12,14 +12,14 @@
                 <div class="col-12 col-md-5 mb-3">
                     <label for="firstName" class="form-label">First Name :</label>
                     <input type="text" class="form-control" [(ngModel)]="user.Fname" name="Fname" id="firstName"
-                        style="width: 90%;" [ngClass]="{ 'dMode': isDarkMode(), 'lMode': !isDarkMode() }"  required>
+                        style="width: 90%;" [ngClass]="{ 'dMode': isDarkMode(), 'lMode': !isDarkMode() }" required>
 
                 </div>
 
                 <div class="col-12 col-md-5 mb-3">
                     <label for="lastName" class="form-label">Last Name :</label>
                     <input type="text" class="form-control" [(ngModel)]="user.Lname" name="Lname" id="lastName"
-                        style="width: 90%;" [ngClass]="{ 'dMode': isDarkMode(), 'lMode': !isDarkMode() }"  required>
+                        style="width: 90%;" [ngClass]="{ 'dMode': isDarkMode(), 'lMode': !isDarkMode() }" required>
 
                 </div>
             </div>
@@ -29,21 +29,23 @@
                 <div class="col-12 col-md-5 mb-3">
                     <label for="inputEmail" class="form-label">Email :</label>
                     <input type="email" class="form-control" [(ngModel)]="user.email" name="email" id="inputEmail"
-                        style="width: 90%;" [ngClass]="{ 'dMode': isDarkMode(), 'lMode': !isDarkMode() }"  required email>
+                        style="width: 90%;" [ngClass]="{ 'dMode': isDarkMode(), 'lMode': !isDarkMode() }" required
+                        email>
 
                 </div>
 
                 <div class="col-12 col-md-5 mb-3">
                     <label for="inputPassword" class="form-label">Password :</label>
                     <input type="password" class="form-control" [(ngModel)]="user.password" name="password"
-                        id="inputPassword" style="width: 90%;" [ngClass]="{ 'dMode': isDarkMode(), 'lMode': !isDarkMode() }"  required minlength="6">
+                        id="inputPassword" style="width: 90%;"
+                        [ngClass]="{ 'dMode': isDarkMode(), 'lMode': !isDarkMode() }" required minlength="6">
 
                 </div>
             </div>
 
             <div class="row justify-content-center align-items-center">
-
-                <div class="col-12 col-md-5 mb-3">
+                <!-- role -->
+                <!-- <div class="col-12 col-md-5 mb-3">
                     <label for="role" class="form-label">Role :</label>
                     <select class="form-select" name="role" [(ngModel)]="user.role" id="role" style="width: 90%;"
                         [ngClass]="{ 'dMode': isDarkMode(), 'lMode': !isDarkMode() }"  required>
@@ -52,7 +54,7 @@
                         <option value="User">User</option>
                     </select>
 
-                </div>
+                </div> -->
             </div>
 
             <div class="row justify-content-center align-items-center">

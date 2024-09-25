@@ -6,29 +6,15 @@
             <div class="card w-100 border-0 shadow-sm nav nav-pills"
                 [ngClass]="{ 'dMode': isDarkMode(), 'lMode': !isDarkMode() }">
                 <h4>Categories:</h4>
+
                 <button class="border border-1 border-secondary  p-2 rounded-3 m-1  nav-link"
                     [ngClass]="{ 'dMode': isDarkMode(), 'lMode': !isDarkMode() }" (click)="navigateToCategory(0)"
                     routerLinkActive="active">All</button>
-
+                @for (category of categories; track $index) {
                 <button class="border border-1 border-secondary  p-2 rounded-3 m-1  nav-link"
-                    [ngClass]="{ 'dMode': isDarkMode(), 'lMode': !isDarkMode() }" (click)="navigateToCategory(1)"
-                    routerLinkActive="active">Clothes</button>
-
-                <button class="border border-1 border-secondary  p-2 rounded-3 m-1  nav-link"
-                    [ngClass]="{ 'dMode': isDarkMode(), 'lMode': !isDarkMode() }" (click)="navigateToCategory(2)"
-                    routerLinkActive="active">Electronics</button>
-
-                <button class="border border-1 border-secondary  p-2 rounded-3 m-1  nav-link"
-                    [ngClass]="{ 'dMode': isDarkMode(), 'lMode': !isDarkMode() }" (click)="navigateToCategory(3)"
-                    routerLinkActive="active">Furniture</button>
-
-                <button class="border border-1 border-secondary  p-2 rounded-3 m-1  nav-link"
-                    [ngClass]="{ 'dMode': isDarkMode(), 'lMode': !isDarkMode() }" (click)="navigateToCategory(4)"
-                    routerLinkActive="active">Shoes</button>
-
-                <button class="border border-1 border-secondary  p-2 rounded-3 m-1  nav-link"
-                    [ngClass]="{ 'dMode': isDarkMode(), 'lMode': !isDarkMode() }" (click)="navigateToCategory(5)"
-                    routerLinkActive="active">Miscellaneous</button>
+                    [ngClass]="{ 'dMode': isDarkMode(), 'lMode': !isDarkMode() }"
+                    (click)="navigateToCategory( category.id )" routerLinkActive="active">{{category.name}}</button>
+                }
             </div>
         </div>
         <div class="container    col-md-9 col-xl-10   ">
@@ -85,26 +71,12 @@
                 <button class="border border-1 border-secondary  p-2 rounded-3 m-1  nav-link"
                     [ngClass]="{ 'dMode': isDarkMode(), 'lMode': !isDarkMode() }" (click)="navigateToCategory(0)"
                     routerLinkActive="active">All</button>
-
+                @for (category of categories; track $index) {
                 <button class="border border-1 border-secondary  p-2 rounded-3 m-1  nav-link"
-                    [ngClass]="{ 'dMode': isDarkMode(), 'lMode': !isDarkMode() }" (click)="navigateToCategory(1)"
-                    routerLinkActive="active">Clothes</button>
+                    [ngClass]="{ 'dMode': isDarkMode(), 'lMode': !isDarkMode() }"
+                    (click)="navigateToCategory( category.id )" routerLinkActive="active">{{category.name}}</button>
+                }
 
-                <button class="border border-1 border-secondary  p-2 rounded-3 m-1  nav-link"
-                    [ngClass]="{ 'dMode': isDarkMode(), 'lMode': !isDarkMode() }" (click)="navigateToCategory(2)"
-                    routerLinkActive="active">Electronics</button>
-
-                <button class="border border-1 border-secondary  p-2 rounded-3 m-1  nav-link"
-                    [ngClass]="{ 'dMode': isDarkMode(), 'lMode': !isDarkMode() }" (click)="navigateToCategory(3)"
-                    routerLinkActive="active">Furniture</button>
-
-                <button class="border border-1 border-secondary  p-2 rounded-3 m-1  nav-link"
-                    [ngClass]="{ 'dMode': isDarkMode(), 'lMode': !isDarkMode() }" (click)="navigateToCategory(4)"
-                    routerLinkActive="active">Shoes</button>
-
-                <button class="border border-1 border-secondary  p-2 rounded-3 m-1  nav-link"
-                    [ngClass]="{ 'dMode': isDarkMode(), 'lMode': !isDarkMode() }" (click)="navigateToCategory(5)"
-                    routerLinkActive="active">Miscellaneous</button>
             </div>
         </div>
         <!-- <div class="col-md-3 col-xl-2 d-none d-md-flex border border-secondary my-3 p-2 rounded-3" style="height:50vh;"
