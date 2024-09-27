@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Category, Category2 } from '../../models/product/product.module';
+import { Category, Category2, product } from '../../models/product/product.module';
 import { ProductService } from '../../services/product.service';
 import { ThemeService } from '../../services/mode.service';
 import { CommonModule } from '@angular/common';
@@ -17,7 +17,7 @@ export class AddCategoryComponent implements OnInit {
   newCategorie: Category2 = {} as Category2;
   CateName: string = '';
   categories: Category[] = []
-
+  product: product[] = []
   constructor(
     private productService: ProductService,
     private themeService: ThemeService,
@@ -28,7 +28,11 @@ export class AddCategoryComponent implements OnInit {
     this.newCategorie.name = " "
     this.productService.getCategories().subscribe(data => {
       this.categories = data;
-    })
+    });
+
+    this.productService.getAllProducts().subscribe(data => {
+      this.product = data;
+    });
 
   }
 
@@ -43,12 +47,10 @@ export class AddCategoryComponent implements OnInit {
     )
   }
 
-
-
-
-
   getAllProduct(categoryId: number): number {
-    return this.categories.filter(c => c.id === categoryId).length; // Example logic
+
+    return this.product.filter(c => c.category.id == categoryId).length;
+
   }
 
   editCategorie(index: number): void {
@@ -71,17 +73,27 @@ export class AddCategoryComponent implements OnInit {
 
   deleteCategorie(index: number): void {
     if (confirm('Are you sure you want to delete this category?')) {
+      if (!this.product.filter(c => c.category.id == index).length) {
 
-      this.productService.deleteCategory(index).subscribe(
-        response => {
-          console.log('Category deleted successfully:', response);
-          this.categories.splice(index, 1); // Remove the category from the local array
-        },
-        error => {
-          console.error('Error deleting category:', error);
-        }
-      );
+
+        this.productService.deleteCategory(index).subscribe(
+          response => {
+            console.log('Category deleted successfully:', response);
+            alert('  delete done');
+
+            this.categories.splice(index, 1);
+          },
+          error => {
+            console.error('Error deleting category:', error);
+          }
+        );
+      }
+      else {
+        alert('Cannot delete category because it is associated with products');
+      }
     }
+
+
   }
 
 

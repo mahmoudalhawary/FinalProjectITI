@@ -40,8 +40,7 @@
                     <div *ngFor="let image of product[0].images; let i = index"
                         class="col-12 col-mdl-6 col-sm-4 form-group mb-3">
                         <div class="d-flex flex-column align-items-start">
-                            <img [src]="image" alt="Product[0] Image" class="rounded mb-2"
-                                style="width: 80px; height: 80px;" />
+                            <img [src]="image" alt="Image" class="rounded mb-2" style="width: 80px; height: 80px;" />
                             <label for="image-{{ i }}" class="fs-6 fw-bold">Image {{ i + 1 }} URL:</label>
                             <input id="image-{{ i }}" [(ngModel)]="product[0].images[i]" name="images-{{ i }}"
                                 class="form-control h43 mb-2"

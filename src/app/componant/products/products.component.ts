@@ -5,20 +5,23 @@ import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { ThemeService } from '../../services/mode.service';
 import { Category, product, shopProduct } from '../../models/product/product.module';
 import { RoleService } from '../../services/role.service';
+import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-products',
   standalone: true,
-  imports: [CommonModule, RouterLink],
+  imports: [CommonModule, RouterLink, FormsModule],
   templateUrl: './products.component.html',
   styleUrl: './products.component.css'
 })
 export class ProductsComponent implements OnInit {
   product: product[] = [];
+  searchProducts: product[] = [];           
+
   shopProduct: shopProduct[] = [];
   categoryid: number = 0;
   categories: Category[] = [];
   userId?: number | boolean | any;
-  // userFlag?: boolean | any = false;
+  searchText?: any;
   constructor(private productService: ProductService,
     private route: ActivatedRoute,
     private router: Router,
@@ -30,17 +33,14 @@ export class ProductsComponent implements OnInit {
 
     this.route.queryParams.subscribe(params => {
       this.categoryid = Number(params['category'] || 0);
-
-
     });
     this.productService.getCategories().subscribe(data => {
       this.categories = data;
     })
     this.productService.getAllProducts().subscribe(data => {
       this.product = data;
-
       if (this.categoryid != 0) {
-        this.product = data.filter((item) => item.category.id === this.categoryid);
+        this.product = data.filter((item) => item.category.id == this.categoryid);
       } else {
         this.ngOnInit()
       }
@@ -68,22 +68,15 @@ export class ProductsComponent implements OnInit {
     }
     console.log("end");
   }
-
-
   isDarkMode(): boolean {
     return this.themeService.currentTheme;
   }
-
   isUser(): boolean {
     return this.roleService.isUserRole;
   }
   isAdmin(): boolean {
     return this.roleService.isAdminRole;
   }
-
-
-
-
   showFullText: boolean = false;
 
   truncatedText(text: string): string {
@@ -101,11 +94,23 @@ export class ProductsComponent implements OnInit {
 
   currentCategory: number = 0;
 
-
   isActive(categoryId: number): boolean {
     return this.currentCategory === categoryId;
   }
 
+  onSearchChange(): void {
+    if (this.searchText) {
+      this.searchProducts = this.product.filter(p => p.title.toLowerCase().includes(this.searchText.toLowerCase()));
+    } else if (this.searchText == '') {
+      this.searchProducts = this.product;
+    }
+    if (this.searchText
+      && this.searchProducts.length === 0
+    ) {
+      this.searchProducts = this.product;
+    }
+
+  }
 
 
 }

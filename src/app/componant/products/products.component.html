@@ -1,6 +1,10 @@
 <div class="p-5 " [ngClass]="{ 'dMode': isDarkMode(), 'lMode': !isDarkMode() }">
     <div class="row d-felx  p-3    ">
-
+        <div class="mb-3 col-12 col-md-6 col-xl-3">
+            <input type="text" class="form-control p-1" placeholder="Search for products..."
+                [ngClass]="{ 'dMode2': isDarkMode(), 'lMode2': !isDarkMode() }" [(ngModel)]="searchText"
+                (ngModelChange)="onSearchChange()" />
+        </div>
         <div class="col-md-3 col-xl-2 d-flrx d-md-none border border-secondary my-3 p-2 rounded-3" style="height:50vh;"
             [ngClass]="{ 'dMode': isDarkMode(), 'lMode': !isDarkMode() }">
             <div class="card w-100 border-0 shadow-sm nav nav-pills"
@@ -20,7 +24,7 @@
         <div class="container    col-md-9 col-xl-10   ">
             <div class="row d-flex flex-lg-row flex-column-reverse">
                 <div class="row d-flex">
-                    <ng-container *ngFor="let item of product;   let i = index">
+                    <ng-container *ngFor="let item of searchProducts;   let i = index">
                         <div class="col-xl-4 col-md-6  col-sm-12  p-2   rounded    "
                             [ngClass]="{ 'dMode': isDarkMode(), 'lMode': !isDarkMode() }">
                             <div class="  prodBorder">
@@ -63,7 +67,7 @@
 
         </div>
 
-        <div class="col-md-3 col-xl-2 d-none d-md-flex border border-secondary my-3 p-2 rounded-3" style="height:360px;"
+        <div class="col-md-3 col-xl-2 d-none d-md-flex    my-3 p-2 rounded-3" style="height:auto;"
             [ngClass]="{ 'dMode': isDarkMode(), 'lMode': !isDarkMode() }">
             <div class="card w-100 border-0 shadow-sm nav nav-pills"
                 [ngClass]="{ 'dMode': isDarkMode(), 'lMode': !isDarkMode() }">
@@ -79,30 +83,7 @@
 
             </div>
         </div>
-        <!-- <div class="col-md-3 col-xl-2 d-none d-md-flex border border-secondary my-3 p-2 rounded-3" style="height:50vh;"
-            [ngClass]="{ 'dMode': isDarkMode(), 'lMode': !isDarkMode() }">
-            <div class="card w-100 border-0 shadow-sm  " [ngClass]="{ 'dMode': isDarkMode(), 'lMode': !isDarkMode() }">
-                <h4>Categories:</h4>
-                <button class="shadow-sm p-2 rounded-3 m-1"
-                    [ngClass]="{ 'dMode': isDarkMode(), 'lMode': !isDarkMode() }" (click)="navigateToCategory(0)"
-                    routerLinkActive="active">All</button>
-                <button class="shadow-sm p-2 rounded-3 m-1"
-                    [ngClass]="{ 'dMode': isDarkMode(), 'lMode': !isDarkMode() }" (click)="navigateToCategory(1)"
-                    routerLinkActive="active">Clothes</button>
-                <button class="shadow-sm p-2 rounded-3 m-1"
-                    [ngClass]="{ 'dMode': isDarkMode(), 'lMode': !isDarkMode() }" (click)="navigateToCategory(2)"
-                    routerLinkActive="active">Electronics</button>
-                <button class="shadow-sm p-2 rounded-3 m-1"
-                    [ngClass]="{ 'dMode': isDarkMode(), 'lMode': !isDarkMode() }" (click)="navigateToCategory(3)"
-                    routerLinkActive="active">Furniture</button>
-                <button class="shadow-sm p-2 rounded-3 m-1"
-                    [ngClass]="{ 'dMode': isDarkMode(), 'lMode': !isDarkMode() }" (click)="navigateToCategory(4)"
-                    routerLinkActive="active">Shoes</button>
-                <button class="shadow-sm p-2 rounded-3 m-1"
-                    [ngClass]="{ 'dMode': isDarkMode(), 'lMode': !isDarkMode() }" (click)="navigateToCategory(5)"
-                    routerLinkActive="active">Miscellaneous</button>
-            </div>
-        </div> -->
+
 
     </div>
 </div>
