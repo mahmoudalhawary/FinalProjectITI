@@ -36,7 +36,11 @@
                 <th>{{item.category.name}}</th>
                 <th><a class="btn  rounded-5  px-3 py-1 bg-secondary " [routerLink]="['/editById/'+item.id]"
                         routerLinkActive="router-link-active">Editer</a></th>
-                <th (click)="delete(item.id)"> <fa-icon class="fs-3 control-icon  bg-red " [icon]="faRemove"></fa-icon>
+                <th>
+                    <a href="#" (click)="delete(item.id)">
+                        <fa-icon class="fs-3 control-icon  bg-red " [icon]="faRemove"></fa-icon>
+                        
+                    </a>
                 </th>
             </tr>
             }

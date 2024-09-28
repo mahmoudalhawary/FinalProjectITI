@@ -1,63 +1,52 @@
 <div class="container-fluid" [ngClass]="{ 'dMode': isDarkMode(), 'lMode': !isDarkMode() }">
   <div *ngIf="product">
-    <h2 class="text-center mb-4">Edit Product: {{ product[0].title }}</h2>
+    <h2 class="text-center mb-4">Edit Product: {{ product.title }}</h2>
 
     <div class="d-flex justify-content-center">
       <form (ngSubmit)="updateProduct()" class="w-100 w-md-50">
         <div class="row">
           <div class="col-12 col-md-6 form-group mb-3">
             <label for="title" class="fs-6 fw-bold">Title:</label>
-            <input class="form-control h43 " id="title" [(ngModel)]="product[0].title" name="title"
+            <input class="form-control h43" id="title" [(ngModel)]="product.title" name="title"
               [ngClass]="{ 'dMode2': isDarkMode(), 'lMode2': !isDarkMode() }" />
           </div>
 
           <div class="col-12 col-md-6 form-group mb-3">
             <label for="price" class="fs-6 fw-bold">Price:</label>
-            <input class="form-control h43" id="price" [(ngModel)]="product[0].price" name="price" type="number"
+            <input class="form-control h43" id="price" [(ngModel)]="product.price" name="price" type="number"
               [ngClass]="{ 'dMode2': isDarkMode(), 'lMode2': !isDarkMode() }" />
           </div>
 
           <div class="col-12 form-group mb-3">
             <label for="description" class="fs-6 fw-bold">Description:</label>
-            <textarea class="form-control h43" id="description" [(ngModel)]="product[0].description" name="description"
+            <textarea class="form-control h43" id="description" [(ngModel)]="product.description" name="description"
               [ngClass]="{ 'dMode2': isDarkMode(), 'lMode2': !isDarkMode() }"></textarea>
           </div>
 
           <div class="col-12 form-group mb-3">
             <label for="category" class="fs-6 fw-bold">Category:</label>
-            <select class="form-control h43" id="category" [(ngModel)]="product[0].category.name" name="category"
-              [ngClass]="{ 'dMode2': isDarkMode(), 'lMode2': !isDarkMode() }">
-              <option value="Electronics">Electronics</option>
-              <option value="Furniture">Furniture</option>
-              <option value="Grosery">Grosery</option>
-              <option value="Kids">Kids</option>
-              <option value="Men">Men</option>
-              <option value="Miscellaneous">Miscellaneous</option>
-              <option value="nuevo">Nuevo</option>
-              <option value="Rrr">Rrr</option>
-              <option value="Shoes">Shoes</option>
-              <option value="Testing category">Testing category</option>
-              <option value="Women">Women</option>
+            <select class="form-control h43" id="category" name="category" [(ngModel)]="product.category.name"
+              (change)="handleCategoryChange($event)" [ngClass]="{ 'dMode2': isDarkMode(), 'lMode2': !isDarkMode() }">
+              <option *ngFor="let category of categories" [value]="category.name">
+                {{ category.name }}
+              </option>
             </select>
           </div>
-<div class="row">
 
-          <div *ngFor="let image of product[0].images; let i = index" class="col-12 col-mdl-6 col-sm-4 form-group mb-3"
-             >
-            <div class="d-flex flex-column align-items-start">
-              <img [src]="image" alt="Product Image" class="rounded mb-2" style="width: 80px; height: 80px;"
-                  />
-              <label for="image-{{ i }}" class="fs-6 fw-bold">Image {{ i + 1 }} URL:</label>
-              <input id="image-{{ i }}" [(ngModel)]="product[0].images[i]" name="images-{{ i }}"
-                class="form-control h43 mb-2" [ngClass]="{ 'dMode2': isDarkMode(), 'lMode2': !isDarkMode() }" />
+          <div class="row">
+            <div *ngFor="let image of product.images; let i = index" class="col-12 col-xl-4 col-md-6 form-group mb-3">
+              <div class="d-flex flex-column align-items-start">
+                <img [src]="image" alt="Product Image" class="rounded mb-2" style="width: 80px; height: 80px;" />
+                <label for="image-{{ i }}" class="fs-6 fw-bold">Image {{ i + 1 }} URL:</label>
+                <input id="image-{{ i }}" [(ngModel)]="product.images[i]" name="images-{{ i }}"
+                  class="form-control h43 mb-2" [ngClass]="{ 'dMode2': isDarkMode(), 'lMode2': !isDarkMode() }" />
 
-              <!-- Upload Image Option -->
-              <label for="upload-image-{{ i }}" class="fs-6 fw-bold">Or Upload Image:</label>
-              <input id="upload-image-{{ i }}" value="ads"name="fasfe" type="file" (change)="onFileSelected($event, i)" class="form-control h43"
-                [ngClass]="{ 'dMode2': isDarkMode(), 'lMode2': !isDarkMode() }" />
+                <label for="upload-image-{{ i }}" class="fs-6 fw-bold">Or Upload Image:</label>
+                <input id="upload-image-{{ i }}" type="file" (change)="onFileSelected($event, i)"
+                  class="form-control h43" [ngClass]="{ 'dMode2': isDarkMode(), 'lMode2': !isDarkMode() }" />
+              </div>
             </div>
           </div>
-        </div>
 
         </div>
 

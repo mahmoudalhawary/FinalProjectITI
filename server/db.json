@@ -2,7 +2,7 @@
   "products": [
     {
       "category": {
-        "id": 1,
+        "id": "1",
         "name": "Clothes"
       },
       "_id": "659e8a485f3b1887ef3212da",
@@ -370,8 +370,8 @@
     },
     {
       "category": {
-        "id": 2,
-        "name": "Electronics"
+        "id": "3",
+        "name": "Furniture "
       },
       "_id": "659e8a485f3b1887ef3212f3",
       "id": "27",
@@ -379,7 +379,7 @@
       "price": 884,
       "description": "The Nagasaki Lander is the trademarked name of several series of Nagasaki sport bikes, that started with the 1984 ABC800J",
       "images": [
-        "https://iili.io/dR1wV6u.jpg",
+        "https://iili.io/dR1whaj.jpg",
         "https://iili.io/dR1wX3b.jpg",
         "https://iili.io/dR1whaj.jpg"
       ]

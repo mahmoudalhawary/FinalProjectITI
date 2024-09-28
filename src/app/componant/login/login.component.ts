@@ -51,7 +51,7 @@ export class LoginComponent {
                     this.router.navigate(['/products', this.user.id]);
                 }
             } else {
-                console.error("Invalid username or password");
+                alert("Invalid username or password");
             }
         }, error => {
             console.error("Error fetching users: ", error);

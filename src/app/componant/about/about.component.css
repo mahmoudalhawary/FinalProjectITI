@@ -113,3 +113,20 @@ pre i {
     --tw-text-opacity: 1;
     color: rgb(130 84 248 / var(--tw-text-opacity));
 }
+
+.carrd {
+    border: solid 1px #703bf7;
+    box-shadow: #703bf7;
+    box-shadow: 2px 5px 10px #703bf7;
+}
+
+.fs--6 {
+    font-size: 3.5rem;
+}
+
+.cover {
+    background-size: cover;
+    width: 150px;
+    height: 150px;
+ 
+}

@@ -1,52 +1,105 @@
-<div class="body w-100 d-flex justify-content-center align-items-center vh-100 "
-    [ngClass]="{ 'dMode': isDarkMode(), 'lMode': !isDarkMode() }">
-    <div class="container w-75 m-4  ">
-        <p class="title">About Developer</p>
-        <p>
+<div class="body w-100 d-flex justify-content-center align-items-center  pt-5"
+    [ngClass]="{ dMode: isDarkMode(), lMode: !isDarkMode() }">
+    <div class="container w-75 m-4">
+        <p class="title d-flex justify-content-center fs-2">About Developer</p>
+        <p class="fs-5 text-center">
             Hello there! I'm <span>Team ITI</span>, the passionate developer behind
-            this website. With a keen eye for detail and a love for crafting
-            seamless digital experiences, I set out to create a unique and
-            user-friendly online shopping platform.
+            this website. With a keen eye for detail and a love for crafting seamless
+            digital experiences, I set out to create a unique and user-friendly online
+            shopping platform.
         </p>
-        <p class="title">Frameworks and Technologies Used</p>
-        <p>
-            In the development of this website, I've harnessed the power of the
-            following frameworks and technologies to create a modern, single-page
-            application (SPA):
-        </p>
-        <div class="icon">
-            <p><fa-icon [icon]="faReact" class="fs-3"></fa-icon></p>
-            <p><fa-icon [icon]="faGitlab" class="fs-3"></fa-icon></p>
-            <p><fa-icon [icon]="faVuejs" class="fs-3"></fa-icon></p>
+
+        <div class="team-images d-flex justify-content-around bg-none my-5  ">
+            <div style=" background-image: url('../../../assets/developers/mahmoudNasr.jpg');
+        
+        " class=" cover rounded d-flex flex-column justify-content-end ps-2">
+                <p class="fs-4">Moahmoud Nasr</p>
+                <p class="">Web development</p>
+            </div>
+            <div style=" background-image: url('../../../assets/developers/salma.jpg');
+        
+        " class=" cover rounded d-flex flex-column justify-content-end ps-2">
+                <p class="fs-4">Salma Abdelaziz</p>
+                <p class="">Web development</p>
+            </div>
+            <div style=" background-image: url('../../../assets/developers/MohamedAbdelrahim.jpg');
+        
+        " class=" cover rounded d-flex flex-column justify-content-end ps-2">
+                <p class="fs-4">Mohamed Abdelrahim</p>
+                <p class="">Web development</p>
+            </div>
+            <div style=" background-image: url('../../../assets/developers/doaaGamal.jpg');
+        
+        " class=" cover rounded d-flex flex-column justify-content-end ps-2">
+                <p class="fs-4">Doaa Gamal</p>
+                <p class="">Web development</p>
+            </div>
+            <div style=" background-image: url('../../../assets/developers/mohamedHadad.jpg');
+        
+        " class=" cover rounded d-flex flex-column justify-content-end ps-2">
+                <p class="fs-4">Mohamed Hadad</p>
+                <p class="">Web development</p>
+            </div>
+            <div style=" background-image: url('../../../assets/developers/nada.jpg');
+        
+        " class=" cover rounded d-flex flex-column justify-content-end ps-2">
+                <p class="fs-4">Nada Hashm</p>
+                <p class="">Web development</p>
+            </div>
+            <div style=" background-image: url('../../../assets/developers/ahmedEzat.jpg');
+        
+        " class=" cover rounded d-flex flex-column justify-content-end ps-2">
+                <p class="fs-4">Ahmed Ezat</p>
+                <p class="">Web development</p>
+            </div>
 
         </div>
-        <p class="title">A Glimpse into the Backend</p>
-        <p>
-            While my expertise primarily lies in frontend development, I've
-            integrated Node.js and Express.js on the backend to ensure a robust and
-            efficient server-side infrastructure. This combination allows for smooth
-            communication between the frontend and the server, ensuring a seamless
-            user experience.
-        </p>
-        <div class="icon">
+
+        <div class="d-flex gap-5 p-3 my-5">
+            <div class="w-50 d-flex flex-column justify-content-center align-items-center gap-5 carrd rounded p-5">
+
+                <p class="title">Frameworks and Technologies Used</p>
+                <p class="text-center">
+                    In the development of this website, I've harnessed the power of the
+                    following frameworks and technologies to create a modern, single-page
+                    application (SPA):
+                </p>
+                <div class="icon d-flex justify-content-around w-100">
+                    <p><fa-icon [icon]="faReact" class="fs-3"></fa-icon></p>
+                    <p><fa-icon [icon]="faGitlab" class="fs-3"></fa-icon></p>
+                    <p><fa-icon [icon]="faVuejs" class="fs-3"></fa-icon></p>
+
+                </div>
+            </div>
+            <div class="w-50 d-flex flex-column justify-content-center align-items-center gap-5 carrd rounded p-5">
+                <p class="title">A Glimpse into the Backend</p>
+                <p class="text-center">
+                    While my expertise primarily lies in frontend development, I've
+                    integrated Node.js and Express.js on the backend to ensure a robust
+                    and efficient server-side infrastructure. This combination allows for
+                    smooth communication between the frontend and the server, ensuring a
+                    seamless user experience.
+                </p>
+                <div class="icon d-flex justify-content-around w-100">
 
 
-            <!-- app.component.html -->
-            <p><fa-icon [icon]="faNode" class="fs-3"></fa-icon></p>
-            <p><fa-icon [icon]="faAngular" class="fs-3"></fa-icon></p>
+                    <!-- app.component.html -->
+                    <p><fa-icon [icon]="faNode" class="fs-3"></fa-icon></p>
+                    <p><fa-icon [icon]="faAngular" class="fs-3"></fa-icon></p>
 
-        </div>
-        <p class="title">Let's Connect</p>
-        <p>
-            Explore the website, discover the offerings, and if you have any
-            questions or suggestions, I'm here to listen. Your journey through this
-            online shopping experience is as important to me as it is to you. Happy
-            exploring!
-        </p>
-        <div class="icon">
-            <p><fa-icon [icon]="faLinkedin" class="fs-3"></fa-icon></p>
-            <p><fa-icon [icon]="faGithub" class="fs-3"></fa-icon></p>
+                </div>
+                <p class="title">Let's Connect</p>
+                <p>
+                    Explore the website, discover the offerings, and if you have any
+                    questions or suggestions, I'm here to listen. Your journey through this
+                    online shopping experience is as important to me as it is to you. Happy
+                    exploring!
+                </p>
+                <div class="icon d-flex justify-content-around w-100">
+                    <p><fa-icon [icon]="faLinkedin" class="fs-3"></fa-icon></p>
+                    <p><fa-icon [icon]="faGithub" class="fs-3"></fa-icon></p>
 
+                </div>
+            </div>
         </div>
     </div>
-</div >
