@@ -1,9 +1,12 @@
 <div class="p-5  d-felx flex-column justify-content-center "
     [ngClass]="{ 'dMode': isDarkMode(), 'lMode': !isDarkMode() }">
     <div>
-        <h1>hallw User... !</h1>
         <h2>this is your dsahboard </h2>
-
+        <div class="mb-3 col-12 col-md-6 col-xl-3">
+            <input type="text" class="form-control p-1" placeholder="Search for products..."
+                [ngClass]="{ 'dMode2': isDarkMode(), 'lMode2': !isDarkMode() }" [(ngModel)]="searchText"
+                (ngModelChange)="onSearchChange()" />
+        </div>
         <button [routerLink]="['/addProduct' ]" class="btn border-1 border  m-2" routerLinkActive="active"
             [ngClass]="{ 'dMode': isDarkMode(), 'lMode': !isDarkMode() }">Add Product</button>
         <button [routerLink]="['/addCategory' ]" class="btn border-1 border  m-2" routerLinkActive="active"
@@ -20,7 +23,7 @@
             <th>delete</th>
         </thead>
         <tbody>
-            @for (item of product; track $index) {
+            @for (item of searchProducts; track $index) {
             <tr ngClass="">
                 <th class="px-3 py-2">{{item.id}}</th>
                 <th>{{item.title}}</th>

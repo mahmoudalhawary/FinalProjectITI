@@ -55,8 +55,11 @@
                                         <p class="text-muted">Price</p>
                                         <p class="fw-bold "> $ {{item.price}} </p>
                                     </div>
-                                    <a (click)="addToCar(i)" class=" btn-move btn me-2 px-3 fs-5 py-1  " btn-move
-                                        role="button">add To Cart</a>
+                                    <!-- <a (click)="addToCar(i)" class=" btn-move btn me-2 px-3 fs-5 py-1  " btn-move
+                                        role="button">add To Cart</a> -->
+
+                                    <input type="button" (click)="addToCar(i)" value="add to cart"
+                                        class="btn-move btn me-2 px-3 fs-5 py-1" name="" id="">
                                 </div>
                             </div>
                         </div>
@@ -83,7 +86,5 @@
 
             </div>
         </div>
-
-
     </div>
 </div>

@@ -7,14 +7,14 @@ import { HomeComponent } from './componant/home/home.component';
 import { AboutComponent } from './componant/about/about.component';
 import { SignUpComponent } from './componant/sign-up/sign-up.component';
 import { LoginComponent } from './componant/login/login.component';
- import { AddProductComponent } from './componant/add-product/add-product.component';
+import { AddProductComponent } from './componant/add-product/add-product.component';
 import { ShoppingCartComponent } from './componant/shopping-cart/shopping-cart.component';
 import { AddCategoryComponent } from './componant/add-category/add-category.component';
 
 export const routes: Routes = [
     { path: '', redirectTo: '/products', pathMatch: 'full' },
     { path: 'products', component: ProductsComponent, title: 'Products' },
-    { path: 'products/category?', component: ProductsComponent, title: 'Products' },
+    // { path: 'products/:userId/category?', component: ProductsComponent, title: 'Products' },
     { path: 'products/:userId', component: ProductsComponent, title: 'Products' },
     { path: 'dashboard', component: DashboardComponent, title: 'dashboard' },
     { path: 'dashboard/:AdminId', component: DashboardComponent, title: 'dashboard' },

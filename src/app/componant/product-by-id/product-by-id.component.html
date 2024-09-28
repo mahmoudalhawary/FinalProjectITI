@@ -5,7 +5,7 @@
 
         <div class="row d-flex justify-content-center align-items-center p-4">
             <div class="col-2  justify-content-between flex px-5">
-                @for (i of product[0].images; track $index) {
+                @for (i of product[0].images; track $index ) {
                 @if ($index==imageIndex) {
 
                 <img class="img-fluid  rounded w-75 m-3" style="opacity: 100%;" [src]="i"
@@ -54,9 +54,9 @@
                             $ {{product[0].price}}
                         </h4>
                     </div>
-                    <button (click)="addToCar()" class=" btn-move btn me-5 px-3 fs-5 py-1  " btn-move role="button">add
-                        To
-                        Cart</button>
+                    <button (click)="addToCar(product[0].id)" class=" btn-move btn me-5 px-3 fs-5 py-1  " btn-move
+                        role="button">add
+                        To Cart</button>
 
                     <!-- <AddToCart [cartData]="{id: item.id, title: item.title, price: item.price}" /> -->
                 </div>

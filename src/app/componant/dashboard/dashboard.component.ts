@@ -1,25 +1,29 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router, RouterLink } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { ProductService } from '../../services/product.service';
 import { ThemeService } from '../../services/mode.service';
 import { product } from '../../models/product/product.module';
 import { faRemove } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [CommonModule, RouterLink, FontAwesomeModule],
+  imports: [CommonModule, FormsModule, RouterLink, FontAwesomeModule],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css'
 })
 export class DashboardComponent implements OnInit {
   product: product[] = [];
+  searchProducts: product[] = [];
+
   faRemove = faRemove;
+  searchText: string = '';
+
   constructor(private productService: ProductService,
     private route: ActivatedRoute,
-    private router: Router,
     private themeService: ThemeService,
   ) { }
 
@@ -27,11 +31,17 @@ export class DashboardComponent implements OnInit {
     const id = Number(this.route.snapshot.paramMap.get('id') || 6);
     this.productService.getAllProducts().subscribe(data => {
       this.product = data;
-      console.log("this.product from   dashboard);" + this.product[5].description);
+      this.searchProducts = this.product;
 
     });
 
 
+  } onSearchChange(): void {
+    if (this.searchText.trim()) {
+      this.searchProducts = this.product.filter(p => p.title.toLowerCase().includes(this.searchText.toLowerCase()));
+    } else {
+      this.searchProducts = this.product;
+    }
   }
   isDarkMode(): boolean {
     return this.themeService.currentTheme;

@@ -1,44 +1,50 @@
-<!-- <h2 style="color: red;">{{ShoppingCartService.getItems() | json}}</h2> -->
-<div class="list">
-  <h1>List of products</h1>
-  <button type="button" class="btn btn-primary btn-lg" (click)="add()">+ Add product</button>
-</div>
-<div class="head">
-  <div class="row">
-    <div class="col-4">
-      <p>NAME</p>
-    </div>
-    <div class="col-2">
-      <p>CATEGORY</p>
-    </div>
-    <div class="col-2">
-      <p>PRICE</p>
-    </div>
-    <div class="col-2">
-      <p>ID</p>
+<div class=" p-2" [ngClass]="{ 'dMode ': isDarkMode(), 'lMode ': !isDarkMode() }">
+  <div class="list">
+    <h1>List of products</h1>
+    <button type="button" class="btn   btn-lg" [ngClass]="{ 'dMode2': isDarkMode(), 'lMode2': !isDarkMode() }"
+      (click)="add()">+ Add product</button>
+  </div>
+  <div class="head" [ngClass]="{ 'dMode2': isDarkMode(), 'lMode2': !isDarkMode() }">
+    <div class="row">
+      <div class="d-flex  col-4" style="justify-content: space-around;">
+        <p>image</p>
+        <p>NAME</p>
+      </div>
+      <div class="col-2">
+        <p>CATEGORY</p>
+      </div>
+      <div class="col-2">
+        <p>PRICE</p>
+      </div>
+      <div class="col-2">
+        <p>ID</p>
+      </div>
+      <div class="col-2">
+        <p>Delete</p>
+      </div>
     </div>
   </div>
-</div>
-@for (item of product; track item.id) {
+  @for (item of product; track item.id) {
 
-<!-- <div class="container"> -->
-<div class="row" style="width: 100%;">
-  <div class="col-4 d-flex">
-    <img [src]="item.images[0]" width="200px" class="m-2 rounded" alt="">
-    <h3>{{item.title}}</h3>
-  </div>
-  <div class="col-2">
-    <h3>{{item.category.name}}</h3>
-  </div>
-  <div class="col-2">
-    <h3 class="price">{{item.price | currency}}</h3>
-  </div>
-  <div class="col-2">
-    <h3>{{item.id}}</h3>
-  </div>
+  <!-- <div class="container"> -->
+  <div class="row align-items-center m-1 ag" style="width: 100%;">
+    <div class="col-4 d-flex align-items-center">
+      <img [src]="item.images[0]" width="200px" class="m-2 rounded" alt="">
+      <h3>{{item.title}}</h3>
+    </div>
+    <div class="col-2  ">
+      <h3>{{item.category.name}}</h3>
+    </div>
+    <div class="col-2">
+      <h3 class="price rounded-2">{{item.price | currency}}</h3>
+    </div>
+    <div class="col-2">
+      <h3>{{item.id}}</h3>
+    </div>
 
-  <div class="col-2">
-    <button class="delete" (click)="delete(item) ">Delete</button>
+    <div class="col-2">
+      <button class="delete rouded-2" (click)="delete(item) ">Delete</button>
+    </div>
   </div>
+  }
 </div>
-}
