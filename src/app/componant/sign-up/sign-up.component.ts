@@ -35,7 +35,7 @@ export class SignUpComponent implements OnInit {
   }
 
   validateForm(): boolean {
-    return !!(this.user.Fname && this.user.Lname && this.user.email && this.user.password && this.user.role);
+    return !!(this.user.Fname && this.user.Lname && this.user.email && this.user.password  );
   }
 
 
