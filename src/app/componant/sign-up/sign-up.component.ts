@@ -35,7 +35,7 @@ export class SignUpComponent implements OnInit {
   }
 
   validateForm(): boolean {
-    return !!(this.user.Fname && this.user.Lname && this.user.email && this.user.password  );
+    return !!(this.user.Fname && this.user.Lname && this.user.email && this.user.password);
   }
 
 
@@ -46,7 +46,7 @@ export class SignUpComponent implements OnInit {
       this.usersService.addUsers(this.user).subscribe(
         response => {
           console.log('User added successfully:', response);
-          this.router.navigate(['/products']);
+          this.router.navigate(['/login']);
         },
         error => {
           console.error('Error during sign up:', error);
