@@ -1,19 +1,18 @@
 {
-    "version": 2,
-    "builds": [
-      {
-        "src": "package.json",
-        "use": "@vercel/static-build",
-        "config": {
-          "distDir": "dist/your-angular-project-name"
-        }
+  "version": 2,
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "dist/FinalProjectITI"
       }
-    ],
-    "routes": [
-      {
-        "src": "/api/(.*)",
-        "dest": "db.json"
-      }
-    ]
-  }
-  
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "db.json"
+    }
+  ]
+}
