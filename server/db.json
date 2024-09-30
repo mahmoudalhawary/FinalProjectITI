@@ -920,6 +920,14 @@
       "email": "alhawary11178@gmail.com",
       "password": "2133",
       "role": "User"
+    },
+    {
+      "id": 11,
+      "Fname": "MAHMOUD",
+      "Lname": "MAHMOUD",
+      "email": "alhawary@gmail.com",
+      "password": "aW23S@fer",
+      "role": "User"
     }
   ],
   "categories": [
@@ -942,6 +950,10 @@
     {
       "id": "5",
       "name": "Miscellaneous"
+    },
+    {
+      "id": "6",
+      "name": "dsad"
     }
   ]
 }

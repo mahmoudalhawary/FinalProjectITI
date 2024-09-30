@@ -4,14 +4,16 @@
         <div class=" wt-25   d-none d-md-block ms-5">
             <h2><strong>Shop</strong></h2>
         </div>
-        <div class="d-md-none  d-flex  ">
-            <form class="container-fluid  ">
-                <button class="btn btn-sm btn-outline-secondary  " type="button"> <i
-                        class="fa-solid fa-right-to-bracket"></i>Login</button>
-                <button class="btn btn-sm btn-outline-secondary mx-2" type="button"><i
-                        class="fa-solid fa-user-plus"></i>Sing
-                    Up</button>
-            </form>
+        <div *ngIf="!userID() && !adminID()">
+            <div class="d-md-none  d-flex  ">
+                <form class="container-fluid  ">
+                    <button class="btn btn-sm btn-outline-secondary  " type="button"> <i
+                            class="fa-solid fa-right-to-bracket"></i>Login</button>
+                    <button class="btn btn-sm btn-outline-secondary mx-2" type="button"><i
+                            class="fa-solid fa-user-plus"></i>Sing
+                        Up</button>
+                </form>
+            </div>
         </div>
 
         <div class=" d-flex justify-content-center align-items-center    px-md-1 mx-md-3    border    rounded-5  "
