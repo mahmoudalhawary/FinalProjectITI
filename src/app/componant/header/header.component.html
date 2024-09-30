@@ -7,9 +7,9 @@
         <div *ngIf="!userID() && !adminID()">
             <div class="d-md-none  d-flex  ">
                 <form class="container-fluid  ">
-                    <button class="btn btn-sm btn-outline-secondary  " type="button"> <i
+                    <button class="btn btn-sm btn-outline-secondary  " [routerLink]="['/login']" type="button"> <i
                             class="fa-solid fa-right-to-bracket"></i>Login</button>
-                    <button class="btn btn-sm btn-outline-secondary mx-2" type="button"><i
+                    <button class="btn btn-sm btn-outline-secondary mx-2 " [routerLink]="['/signup']" type="button"><i
                             class="fa-solid fa-user-plus"></i>Sing
                         Up</button>
                 </form>
@@ -68,14 +68,16 @@
 
             </div>
 
-            <form class="container-fluid d-flex justify-content-end">
-                <div *ngIf="!userID() && !adminID()">
-                    <button class="btn btn-sm btn-outline-secondary mx-2" [routerLink]="['/login']" type="button">
-                        <i class="fa-solid fa-right-to-bracket"></i> Log In
-                    </button>
-                    <button class="btn btn-sm btn-outline-secondary mx-2" [routerLink]="['/signup']" type="button">
-                        <i class="fa-solid fa-user-plus"></i> Sign Up
-                    </button>
+            <form class="container-fluid  justify-content-end">
+                <div class="d-md-flex  d-none">
+                    <div *ngIf="!userID() && !adminID()">
+                        <button class="btn btn-sm btn-outline-secondary mx-2" [routerLink]="['/login']" type="button">
+                            <i class="fa-solid fa-right-to-bracket"></i> Log In
+                        </button>
+                        <button class="btn btn-sm btn-outline-secondary mx-2" [routerLink]="['/signup']" type="button">
+                            <i class="fa-solid fa-user-plus"></i> Sign Up
+                        </button>
+                    </div>
                 </div>
 
                 <button *ngIf="adminID() || userID()" class="btn btn-sm btn-outline-secondary mx-2" (click)="logout()"

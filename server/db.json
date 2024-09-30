@@ -787,57 +787,6 @@
         "https://iili.io/dR1G6In.jpg"
       ],
       "userID": 3
-    },
-    {
-      "id": "3",
-      "category": {
-        "id": 1,
-        "name": "Clothes"
-      },
-      "_id": "659e8a485f3b1887ef3212de",
-      "title": "Handcrafted Rubber Shirt",
-      "price": 488,
-      "description": "The beautiful range of Apple Naturalé that has an exciting mix of natural ingredients. With the Goodness of 100% Natural Ingredients",
-      "images": [
-        "https://iili.io/dR1EZR1.jpg",
-        "https://iili.io/dR1GHfR.jpg",
-        "https://iili.io/dR1GdUN.jpg"
-      ],
-      "userID": 3
-    },
-    {
-      "id": "3",
-      "category": {
-        "id": 1,
-        "name": "Clothes"
-      },
-      "_id": "659e8a485f3b1887ef3212de",
-      "title": "Handcrafted Rubber Shirt",
-      "price": 488,
-      "description": "The beautiful range of Apple Naturalé that has an exciting mix of natural ingredients. With the Goodness of 100% Natural Ingredients",
-      "images": [
-        "https://iili.io/dR1EZR1.jpg",
-        "https://iili.io/dR1GHfR.jpg",
-        "https://iili.io/dR1GdUN.jpg"
-      ],
-      "userID": 2
-    },
-    {
-      "id": "9",
-      "category": {
-        "id": 1,
-        "name": "Clothes"
-      },
-      "_id": "659e8a485f3b1887ef3212e1",
-      "title": "Practical Granite Pants",
-      "price": 655,
-      "description": "Ergonomic executive chair upholstered in bonded black leather and PVC padded seat and back for all-day comfort and support",
-      "images": [
-        "https://iili.io/dR1wqYv.jpg",
-        "https://iili.io/dR1wtnt.jpg",
-        "https://iili.io/dR1wDMX.jpg"
-      ],
-      "userID": 2
     }
   ],
   "users": [
@@ -922,7 +871,7 @@
       "role": "User"
     },
     {
-      "id": 11,
+      "id": "11",
       "Fname": "MAHMOUD",
       "Lname": "MAHMOUD",
       "email": "alhawary@gmail.com",

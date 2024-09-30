@@ -1,4 +1,5 @@
-<div class=" p-2" [ngClass]="{ 'dMode ': isDarkMode(), 'lMode ': !isDarkMode() }">
+<div class=" p-2" style="min-height: 65vh; max-height: fit-content;"
+  [ngClass]="{ 'dMode ': isDarkMode(), 'lMode ': !isDarkMode() }">
   <div class="list">
     <h1>List of products</h1>
     <button type="button" class="btn   btn-lg" [ngClass]="{ 'dMode2': isDarkMode(), 'lMode2': !isDarkMode() }"
